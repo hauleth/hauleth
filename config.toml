@@ -1,0 +1,37 @@
+baseURL = "https://hauleth.dev/"
+languageCode = "en-gb"
+title = "Hauleth"
+theme = "terminal"
+
+[params]
+    contentTypeName = "post"
+    themeColor = "orange"
+    fullWidthTheme = false
+    centerTheme = false
+
+[languages]
+  [languages.en]
+    subtitle = "Blog about BEAM, Rust, fantasy & stuff"
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "Hauleth"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "twitter"
+        name = "Twitter"
+        url = "https://twitter.com/hauleth"
+      [[languages.en.menu.main]]
+        identifier = "github"
+        name = "GitHub"
+        url = "https://github.com/hauleth"
+      [[languages.en.menu.main]]
+        identifier = "gitlab"
+        name = "GitLab"
+        url = "https://gitlab.com/hauleth"
