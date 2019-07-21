@@ -167,7 +167,7 @@ I am very interested about your feelings about Common Test usage in Elixir and
 about proposed API for Commoner. You can ping me:
 
 - On [Elixir forum thread about Commoner][forum]
-- In Twitter via `@hauleth`
+- On Twitter via `@hauleth`
 
 ### Special thanks
 
