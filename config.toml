@@ -7,7 +7,7 @@ theme = "terminal"
     contentTypeName = "post"
     themeColor = "orange"
     fullWidthTheme = false
-    centerTheme = false
+    centerTheme = true
 
 [languages]
   [languages.en]
