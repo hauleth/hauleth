@@ -43,7 +43,7 @@ I am using NeoVim 0.3.4, but almost everything I will describe there should work
 in Vim 8.1+ as well. If you will encounter any problems, then please let me
 know.
 
-Vim doesn't (as 13.04.2019) do not support Elixir out of the box, so what we
+Vim doesn't (as 13.04.2019) support Elixir out of the box, so what we
 need is to install [`vim-elixir`][] plugin which will provide niceties like syntax
 colouring and indentation. Even if syntax colouring isn't your thing then I
 would still recommend installing it as it provides other things that it provides
