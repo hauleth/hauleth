@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Fira Code';
+  font-display: fallback;
+  font-style:  normal;
+  font-weight: 400;
+  src: url("../fonts/FiraCode-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-display: fallback;
+  font-style:  normal;
+  font-weight: 800;
+  src: url("../fonts/FiraCode-Bold.woff") format("woff");
+}
