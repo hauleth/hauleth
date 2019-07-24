@@ -5,8 +5,8 @@
   "author": "Radosław Kozieł <@panr> <radoslaw.koziel@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "dev": "cd themes/terminal/ && webpack --mode=development --watch",
+    "build": "cd themes/terminal/ && webpack --mode=production"
   },
   "browserslist": [
     "last 2 versions",
