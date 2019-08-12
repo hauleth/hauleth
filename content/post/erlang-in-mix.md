@@ -20,7 +20,20 @@ Erlang library).
 
 ## Declarative vs imperative
 
-Accordingly to [Wikipedia][declarative programming]:
+Mix's `mix.exs` is completely imperative (being functional programming language
+doesn't change a thing there), which mean that this is simply compiled and ran
+module that exposes 1 function `config/0`. This mean that `mix.exs` can do
+anything that regular Elixir script can, that include:
+
+- Accessing your disk
+- Sending data via HTTP requests
+- Scanning local network
+- Etc.
+
+> With great power comes great responsibility.
+
+In contrast to that, Rebar file is completely declarative. Accordingly to
+[Wikipedia][declarative programming]:
 
 > In computer science, declarative programming is a programming paradigm—a style
 > of building the structure and elements of computer programs—that expresses the
@@ -28,32 +41,14 @@ Accordingly to [Wikipedia][declarative programming]:
 
 In other words, we only describe **what** without focusing on **how**. This mean
 that we have less direct control over our configuration while requiring less
-knowledge to configure properly.
+knowledge to configure properly (of course except learning Erlang's
+`file:consult/1` file format).
 
-At the same time it is (in theory) more secure, as imagine that you would have
-dependency with such `mix.exs`:
-
-```elixir
-defmodule TotallySafeLibrary.Mixfile do
-  use Mix.Project
-
-  # HAHAHA I lied!!! Pwnd MF
-  File.rm_rf!(System.user_home())
-
-  # …
-end
-```
-
-I mean, this is still possible in Rebar via `rebar.config.script`, but it is
-much harder due to 2 reasons:
-
-- There is no such function like `File.rm_rf!/1` in Erlang, so the end user
-  would need to write their own.
-- It is much easier to spot additional file in the repo than review whole one
-  file.
-
-The same goes for `.app.src` file, which while having more "abstract" format
-than Mix's `application/0` function ends much simpler without all imperativeness
-brought by making configuration file executable script.
+Of course there are situations when you **really** need to run some code to make
+adjustments due to the OS/libraries positions/other stuff that author's of Rebar
+do not thought of. Then you always can use `rebar.config.script` which is Erlang
+script that need to output updated configuration.
 
 ## Tasks
+
+[declarative programming]: https://en.wikipedia.org/wiki/Declarative_programming
