@@ -1,6 +1,10 @@
 ---
 title: "Let's talk about `application/0`"
 date: 2019-07-26T11:36:01+02:00
+description: |
+    Have you ever thought about that one simple function in your `mix.exs`? It
+    comes out as quite powerful and useful place for storing configuration and
+    post-launch scripts.
 tags:
     - elixir
     - erlang

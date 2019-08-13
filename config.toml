@@ -1,4 +1,4 @@
-baseURL = "https://hauleth.dev/"
+baseURL = "/"
 languageCode = "en-gb"
 title = "Hauleth"
 theme = "terminal"
