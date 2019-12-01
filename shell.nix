@@ -3,5 +3,5 @@
 with pkgs;
 
 mkShell {
-  buildInputs = [ hugo git-lfs yarn ];
+  buildInputs = [ hugo git-lfs yarn vale ];
 }
