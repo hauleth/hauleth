@@ -49,7 +49,7 @@ incognita, a place where you never look unless you are forced to, like "Read
 it later" list in Safari. This is sad, as it is quite powerful and useful
 piece of code.
 
-But first things first.
+However first things first.
 
 ## What `application/0` is for?
 
@@ -84,7 +84,7 @@ There are also few Elixir specific fields, sometimes used in larger projects:
 - `:included_applications` - applications which should be included in the
   release, but not automatically started on boot.
 
-But wait, there is more!
+Wait, there is more!
 
 Unfortunately not all of the highly useful keys are used/known in the community.
 
@@ -137,7 +137,7 @@ like:
 ]
 ```
 
-But alternatively you can use `:start_phases` in `application/0`:
+Alternatively you can use `:start_phases` in `application/0`:
 
 ```elixir
 start_phases: [
