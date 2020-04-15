@@ -137,6 +137,12 @@ that is broken, you can check out [my script][xdg-please] that tries to fix
 Please, stop leaving your c\*\*p in my `$HOME` and call it "installation". If
 you want that, then I think you should find nearest Modern Art Gallery.
 
+---
+
+You can comment it on [Lobste.rs](https://lobste.rs/s/va7gic/stop_spreading_c_p_at_my_home)
+or [Hacker News](https://news.ycombinator.com/item?id=22882590) or @ me on
+Twitter.
+
 [fhs]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 [xdg]: https://specifications.freedesktop.org/basedir-spec/latest/index.html
 [delete-your-darlings]: https://grahamc.com/blog/erase-your-darlings
