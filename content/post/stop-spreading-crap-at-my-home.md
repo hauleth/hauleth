@@ -1,5 +1,5 @@
 ---
-title: "Stop Spreading C\\*\\*p at My `$HOME`"
+title: "Stop Spreading Crap at My `$HOME`"
 date: 2020-04-15T12:00:19+02:00
 tags:
   - programming
@@ -140,8 +140,8 @@ you want that, then I think you should find nearest Modern Art Gallery.
 ---
 
 You can comment it on [Lobste.rs](https://lobste.rs/s/va7gic/stop_spreading_c_p_at_my_home)
-or [Hacker News](https://news.ycombinator.com/item?id=22882590) or @ me on
-Twitter.
+[Reddit](https://www.reddit.com/r/programming/comments/g2210g/stop_spreading_cp_at_my_home/)
+or @ me on Twitter.
 
 [fhs]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 [xdg]: https://specifications.freedesktop.org/basedir-spec/latest/index.html
