@@ -1,16 +1,19 @@
----
-title: "Let's talk about `application/0`"
-date: 2019-07-26T11:36:01+02:00
-description: |
-    Have you ever thought about that one simple function in your `mix.exs`? It
-    comes out as quite powerful and useful place for storing configuration and
-    post-launch scripts.
-tags:
-    - elixir
-    - erlang
-    - beam
-    - programming
----
++++
+title = "Let's talk about `application/0`"
+date = 2019-07-26
+description = """
+Have you ever thought about that one simple function in your `mix.exs`? It
+comes out as quite powerful and useful place for storing configuration and
+post-launch scripts."""
+
+[taxonomies]
+tags = [
+  "elixir",
+  "erlang",
+  "beam",
+  "programming"
+]
++++
 
 When you start your new Elixir project via `mix new my_awesome_project` you will
 end with something like this in `mix.exs`:

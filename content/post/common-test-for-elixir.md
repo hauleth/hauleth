@@ -1,16 +1,18 @@
----
-title: "Common Test for Elixir developers"
-date: 2019-07-15T14:31:21+02:00
-description: "What is Common Test and how we can use it in Elixir"
-tags:
-    - erlang
-    - beam
-    - elixir
-    - testing
-    - programming
-    - common_test
-    - commoner
----
++++
+title = "Common Test for Elixir developers"
+date = 2019-07-15
+
+[taxonomies]
+tags = [
+ "erlang",
+ "beam",
+ "elixir",
+ "testing",
+ "programming",
+ "common_test",
+ "commoner"
+]
++++
 
 In my new job I have opportunity to work a little bit more with Erlang code and
 Erlang related tools than earlier.  That forced me a little to learn and use
@@ -57,7 +59,7 @@ Common Test for integration testing:
   SNMP, FTP, Erlang RPC, netconf)
 - Built in support for data fixtures
 - Built in support for complex configuration of test runs via [test
-  specifications](http://www.erlang.org/doc/man/run_test_chapter.html#test-specification-syntax)
+  specifications](http://erlang.org/doc/apps/common_test/run_test_chapter.html#test-specifications)
 - Built in logging (we will cover that later)
 
 So as you can see, the Common Test is much broader and complex, but at the same
@@ -121,7 +123,7 @@ in [our test log](/common-test-example/log/ct_run.ct@NiunioBook.2019-07-16_11.03
 ![Common Test log "Example message" on green background](/img/common-test/log.png)
 
 Additionally there is support Surefire XML output (commonly known as JUnit XML)
-via [hook that is distributed with Common Test](http://www.erlang.org/doc/man/ct_hooks_chapter.html#built-in-cths).
+via [hook that is distributed with Common Test](http://erlang.org/doc/apps/common_test/ct_hooks_chapter.html#built-in-cths).
 This is very useful, as many CI services (for sure Jenkins, Circle CI, and
 GitLab CI) support such files to provide better CI results than raw stdout.
 
@@ -173,7 +175,7 @@ about proposed API for Commoner. You can ping me:
 
 - José Valim - for reading it through and reviewing before publishing
 
-[ct]: http://www.erlang.org/doc/man/basics_chapter.html
+[ct]: http://erlang.org/doc/apps/common_test/basics_chapter.html
 [ctex]: https://github.com/Comcast/ctex
 [commoner]: https://github.com/hauleth/commoner
 [forum]: https://elixirforum.com/t/commoner-elixir-wrapper-for-common-test-library/23966?u=hauleth

@@ -1,10 +1,13 @@
----
-title: "Stop Spreading Crap at My `$HOME`"
-date: 2020-04-15T12:00:19+02:00
-tags:
-  - programming
-  - culture
----
++++
+title = "Stop Spreading Crap at My `$HOME`"
+date = 2020-04-15T12:00:19+02:00
+
+[taxonomies]
+tags = [
+  "programming",
+  "culture"
+]
++++
 
 **Disclaimer:** Yes, this is a rant. Yes, I am displeased with state of
 software. And yes, I can use some harsh words. You were warned.

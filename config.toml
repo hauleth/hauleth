@@ -1,37 +1,63 @@
-baseURL = "/"
-languageCode = "en-gb"
+base_url = "/"
+default_language = "en"
+
 title = "Hauleth's blog"
-theme = "terminal"
+description = "Blog about BEAM, Rust, fantasy & stuff"
 
-[params]
-    contentTypeName = "post"
-    themeColor = "orange"
-    fullWidthTheme = false
-    centerTheme = true
+theme = "zerm"
 
-[languages]
-  [languages.en]
-    subtitle = "Blog about BEAM, Rust, fantasy & stuff"
-    keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
+highlight_code = true
+highlight_theme = "nord"
+generate_feed = true
 
-    [languages.en.params.logo]
-      logoText = "Hauleth"
-      logoHomeLink = "/"
+taxonomies = [
+  {name = "tags"},
+  {name = "categories"},
+]
 
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "twitter"
-        name = "Twitter"
-        url = "https://twitter.com/hauleth"
-      [[languages.en.menu.main]]
-        identifier = "github"
-        name = "GitHub"
-        url = "https://github.com/hauleth"
-      [[languages.en.menu.main]]
-        identifier = "gitlab"
-        name = "GitLab"
-        url = "https://gitlab.com/hauleth"
+[extra]
+author = "Łukasz Niemier"
+theme_color = "blue"
+
+logo_text = "~hauleth"
+logo_home_link = "/"
+
+show_author = false
+show_categories = true
+show_tags = true
+
+# How many menu items to show on desktop. if you set this to 0, only submenu
+# button will be visible.
+show_menu_items = 10
+
+# set theme to full screen width.
+full_width = false
+
+# center theme with default width.
+center = true
+
+# Set a custom preview image for your website when posted as a link.
+# Must be placed in root of static/ directory...
+# og_preview_img = ""
+
+# Copyright notice if desired. Defaults to 
+# copyright = "copyright notice here"
+
+# Menu items to display. You define a url and the name of the menu item.
+# NOTE: `$BASE_URL/` must be included in the url name.
+main_menu = [
+  {url="/about/", name="about"},
+  {url="https://twitter.com/hauleth", name="twitter"},
+  {url="https://github.com/hauleth", name="github"},
+  {url="https://gitlab.com/hauleth", name="gitlab"},
+]
+
+# Displayed as title of drop-down menu when size of main_menu > show_menu_items.
+menu_more = "show more"
+
+# Displayed after teaser text for a blog post.
+read_more = "read more"
+
+# not currently used from previous theme, but leaving here for now in case I
+# feel like adding it.
+read_other_posts = "read other posts"

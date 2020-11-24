@@ -1,15 +1,18 @@
----
-title: "Treachery of Representation"
-date: 2020-04-27T13:06:26+02:00
-lastmod: 2020-04-27T13:06:26+02:00
-description: |
-    Representation is not data - something that developers (and not only them)
-    often forgot when working with different data.
-tags:
-  - programming
-  - linguistic
-  - culture
----
++++
+title = "Treachery of Representation"
+date = 2020-04-27
+lastmod = 2020-04-27T13:06:26+02:00
+description = """
+Representation is not data - something that developers (and not only them)
+often forgot when working with different data."""
+
+[taxonomies]
+tags = [
+  "programming",
+  "linguistic",
+  "culture"
+]
++++
 
 ![Treachery of Images](/img/treachery-of-images.jpg)
 

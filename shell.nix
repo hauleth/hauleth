@@ -1,7 +1,10 @@
 { pkgs ? import <nixpkgs> {}, ... }:
 
-with pkgs;
-
-mkShell {
-  buildInputs = [ hugo git-lfs yarn ];
-}
+let
+  blog = import ./. {};
+in
+  pkgs.mkShell {
+    buildInputs = [
+      blog.zola
+    ];
+  }

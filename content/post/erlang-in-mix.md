@@ -1,8 +1,8 @@
----
-title: "Erlang in Mix"
-date: 2019-07-24T12:32:07+02:00
-draft: true
----
++++
+title = "Erlang in Mix"
+date = 2019-07-24T12:32:07+02:00
+draft = true
++++
 
 Currently there are 3 main build tools in BEAM world:
 

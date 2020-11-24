@@ -1,14 +1,17 @@
----
-date: 2019-07-14T17:38:48+01:00
-description: "Simple introduction to Rust's ownership system"
-title: "Here be (owned) books"
-tags:
-    - rust
-    - programming
-    - ownership
-    - eli5
-    - borrowing
----
++++
+date = 2019-07-14T17:38:48+01:00
+description = "Simple introduction to Rust's ownership system"
+title = "Here be (owned) books"
+
+[taxonomies]
+tags = [
+  "rust",
+  "programming",
+  "ownership",
+  "eli5",
+  "borrowing"
+]
++++
 
 One of Rust's biggest pros is its unique ownership system. Unfortunately, it is
 also one of the hardest things to learn. In this article I will try to explain

@@ -1,13 +1,16 @@
----
-title: "Writing Vim Plugin"
-date: 2019-11-04T18:21:18+01:00
-description: |
-    Article about writing Vim plugins, but not about writing Vim plugins. It is
-    how to concieve plugin, how to go from an idea to the full fledged plugin.
-tags:
-    - vim
-    - viml
----
++++
+title = "Writing Vim Plugin"
+date = 2019-11-04T18:21:18+01:00
+description = """
+Article about writing Vim plugins, but not about writing Vim plugins. It is
+how to concieve plugin, how to go from an idea to the full fledged plugin."""
+
+[taxonomies]
+tags = [
+  "vim",
+  "viml"
+]
++++
 
 While there are many "tutorials" for writing plugins in Vim, I hope this one
 will be a little bit different from what is out there, because it won't be

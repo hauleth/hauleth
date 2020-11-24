@@ -1,14 +1,17 @@
----
-title: "Dumb Elixir VIsual (and iMproved) editor"
-description: "How I have configured Vim for working with Elixir and Erlang projects"
-date: 2019-04-13T21:40:05+02:00
-tags:
-    - elixir
-    - erlang
-    - vim
-    - neovim
-    - programming
----
++++
+title = "Dumb Elixir VIsual (and iMproved) editor"
+description = "How I have configured Vim for working with Elixir and Erlang projects"
+date = 2019-04-13T21:40:05+02:00
+
+[taxonomies]
+tags = [
+  "elixir",
+  "erlang",
+  "vim",
+  "neovim",
+  "programming"
+]
++++
 
 > Earlier published on [Medium](https://medium.com/@hauleth/dumb-elixir-visual-and-improved-editor-53c23a0800e4)
 
