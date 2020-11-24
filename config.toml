@@ -4,6 +4,8 @@ default_language = "en"
 title = "Hauleth's blog"
 description = "Blog about BEAM, Rust, fantasy & stuff"
 
+compile_sass = true
+
 theme = "zerm"
 
 highlight_code = true
