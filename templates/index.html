@@ -1,11 +1,9 @@
 {% extends "zerm/templates/index.html" %}
 
-{% block general_meta %}
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="{{ config.description }}"/>
-    <script async defer data-domain="hauleth.dev" src="https://plausible.io/js/plausible.js"></script>
-{% endblock general_meta %}
+{% block script %}
+  {{ footer::script() }}
+  <script async defer data-domain="hauleth.dev" src="https://plausible.io/js/plausible.js"></script>
+{% endblock script %}
 
 {% block header %}
 <header class="header">

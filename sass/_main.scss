@@ -1,4 +1,4 @@
-@import "../themes/zerm/sass/variables";
+@import "variables";
 
 html {
   box-sizing: border-box;
@@ -22,10 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
-
-  @media (max-width: $phone-max-width) {
-    font-size: 1rem;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,8 +40,8 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom-color: transparent;
     cursor: pointer;
 
-    @media(max-width: $phone-max-width){
-        visibility: visible;
+    @media (hover: none){
+      visibility: visible;
     }
   }
 
@@ -56,21 +52,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Actually keeping Pawroman's stylings here for font-size over h1-h6.
-// I prefer differentiated header height.
-
-// OLD
-// ---------------------
-// h1, h2, h3 {
-//   font-size: 1.4rem;
-// }
-
-// h4, h5, h6 {
-//   font-size: 1.2rem;
-// }
-
-// Pawroman's
-// ---------------------
 h1 {
   font-size: 1.4rem;
 }
@@ -95,68 +76,10 @@ a {
 img {
   display: block;
   max-width: 100%;
-
-  &.left {
-    margin-right: auto;
-  }
-
-  &.center {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &.right {
-    margin-left: auto;
-  }
 }
 
 p {
   margin-bottom: 20px;
-}
-
-figure {
-  display: table;
-  max-width: 100%;
-  margin: 25px 0;
-
-  &.left {
-    // img {
-      margin-right: auto;
-    // }
-  }
-
-  &.center {
-    // img {
-      margin-left: auto;
-      margin-right: auto;
-    // }
-  }
-
-  &.right {
-    // img {
-      margin-left: auto;
-    // }
-  }
-
-  figcaption {
-    font-size: 14px;
-    padding: 5px 10px;
-    margin-top: 5px;
-    background: var(--accent);
-    color: var(--background);
-
-    &.left {
-      text-align: left;
-    }
-
-    &.center {
-      text-align: center;
-    }
-
-    &.right {
-      text-align: right;
-    }
-  }
 }
 
 code {
@@ -186,12 +109,12 @@ pre {
     word-wrap: break-word;
   }
 
-    code {
-      background: none !important;
-      margin: 0;
-      padding: 0;
-      font-size: inherit;
-      border: none;
+  code {
+    background: none !important;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    border: none;
   }
 }
 
@@ -256,9 +179,9 @@ ul, ol {
   padding: 0;
 
   li {
-      position: relative;
-      margin-top: 5px;
-      margin-bottom: 5px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   @media (max-width: $phone-max-width) {
@@ -266,8 +189,8 @@ ul, ol {
   }
 
   ul, ol {
-      margin-top: 10px;
-      margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
