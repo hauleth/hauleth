@@ -1,10 +1,10 @@
-+++
-title = "hauleth"
-transparent = false
+---
+title: "hauleth"
+transparent: false
 
-[extra]
-no_comments = true
-+++
+extra:
+  no_comments: true
+---
 
 ## hello
 
