@@ -7,8 +7,8 @@
 {%- endblock title -%}
 
 {%- block main -%}
-  <div class="post">
-    <h1 class="post-title">
+  <article class="post h-entry">
+    <h1 class="post-title p-name">
       <a href="{{ page.permalink }}">{{ page.title }}</a>
     </h1>
     {{ posts::meta(page=page, author=config.extra.show_author) }}
@@ -21,7 +21,7 @@
       </div>
     </div>
     {%- endif -%}
-    <div class="post-content">
+    <div class="post-content e-content">
       {{ page.content | safe }}
     </div>
     {% if not page.extra.no_comments %}
@@ -33,5 +33,5 @@
           (<a href="https://lists.sr.ht/~hauleth/blog">archive</a>).</p>
     </div>
     {% endif %}
-  </div>
+  </article>
 {%- endblock main -%}

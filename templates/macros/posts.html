@@ -1,0 +1,54 @@
+{% macro section_meta(section, author) %}
+    <div class="post-meta">
+        {%- if section.extra["date"] -%}
+          <time class="post-date" datetime="{{ section.extra["date"] }}">
+            {{ section.extra["date"] | date(format="%Y.%m.%d") }}
+          </time>
+        {%- endif -%}
+    </div>
+{% endmacro section_meta %}
+
+{% macro meta(page, author) %}
+    <div class="post-meta">
+        <span class="post-date">
+            {%- if page.date -%}
+              <time class="dt-published" datetime="{{ page.date }}">{{ page.date | date(format="%Y.%m.%d") }}</time>
+            {%- endif -%}
+
+            {%- if page.updated -%}
+              [Updated: <time class="dt-updated" datetime="{{ page.updated }}">{{ page.updated | date(format="%Y.%m.%d") }}</time>]
+            {%- endif -%}
+        </span>
+
+        {{ posts::taxonomies(taxonomy=page.taxonomies,
+           disp_cat=config.extra.show_categories,
+           disp_tag=config.extra.show_tags) }}
+    </div>
+{% endmacro meta %}
+
+{% macro taxonomies(taxonomy, disp_cat, disp_tag) %}
+    {%- if taxonomy.categories -%}
+        {{ posts::categories(categories=taxonomy.categories) }}
+    {%- endif -%}
+    {%- if taxonomy.tags -%}
+        {{ posts::tags(tags=taxonomy.tags) }}
+    {%- endif -%}
+{% endmacro taxonomies %}
+
+{% macro categories(categories) %}
+    :: {
+    {%- for cat in categories -%}
+        {%- if loop.last -%}
+            <a class="p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
+        {%- else -%}
+            <a class="p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>,
+        {%- endif -%}
+    {%- endfor -%}}{# <--- NOTE: OPEN CURLY BRACE #}
+{% endmacro categories %}
+
+{% macro tags(tags) %}
+    ::
+    {% for tag in tags -%}
+        #<a class="p-category" href="{{get_taxonomy_url(kind="tags", name=tag )}}">{{ tag }}</a>
+    {% endfor -%}
+{% endmacro tags %}
