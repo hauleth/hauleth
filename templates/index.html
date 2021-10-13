@@ -3,25 +3,42 @@
 {% block fonts %}
 {% endblock %}
 
+{% block rss %}
+  {%- if config.generate_feed -%}
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path=config.feed_filename) | safe}}">
+  {%- endif -%}
+{% endblock %}
+
 {% block script %}
   <script async defer data-domain="hauleth.dev" src="https://plausible.io/js/plausible.js"></script>
 {% endblock script %}
 
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  {% if config.extra.theme_color != "orange" -%}
+    {% set color = "/color/" ~ config.extra.theme_color ~ ".css" -%}
+    <link rel="stylesheet" type="text/css" href="{{ color }}" />
+  {%- else -%}
+    <link rel="stylesheet" type="text/css" href="/color/orange.css" />
+  {% endif %}
+{% endblock css %}
+
 {% block header %}
-<header class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      {{ logo::logo() }}
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        {{ logo::logo() }}
+      </div>
     </div>
-  </div>
-  <nav class="menu">
-    <ul class="menu__inner">
-      {%- for menu_item in config.extra.main_menu -%}
-      <li>
-        <a href="{% if menu_item.url is matching("^https?://") %}{{ menu_item.url }}{% else %}{{ get_url(path=menu_item.url) }}{% endif %}">{{ menu_item.name }}</a>
-      </li>
-      {%- endfor-%}
-    </ul>
-  </nav>
-</header>
+    <nav class="menu">
+      <ul class="menu__inner">
+        {%- for menu_item in config.extra.main_menu -%}
+        <li>
+          <a href="{% if menu_item.url is matching("^https?://") %}{{ menu_item.url }}{% else %}{{ get_url(path=menu_item.url) }}{% endif %}"
+             {% if menu_item.rel %}rel="{{ menu_item.rel }}"{% endif %}>{{ menu_item.name }}</a>
+        </li>
+        {%- endfor-%}
+      </ul>
+    </nav>
+  </header>
 {% endblock %}

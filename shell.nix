@@ -6,5 +6,7 @@ in
   pkgs.mkShell {
     buildInputs = [
       blog.zola
+      pkgs.vale
+      pkgs.mdl
     ];
   }

@@ -1,0 +1,37 @@
+{%- extends "index.html" -%}
+
+{%- import "macros/toc.html" as toc -%}
+
+{%- block title -%}
+    <title>{{ page.title }} - {{  config.extra.author }}</title>
+{%- endblock title -%}
+
+{%- block main -%}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ page.permalink }}">{{ page.title }}</a>
+    </h1>
+    {{ posts::meta(page=page, author=config.extra.show_author) }}
+    {%- if page.toc | length >= 5 -%}
+    <div class="post-toc">
+      <label for="toc-toggle">Table of content</label>
+      <input type="checkbox" id="toc-toggle" hidden />
+      <div class="toggleable">
+        {{ toc::toc(headers=page.toc) }}
+      </div>
+    </div>
+    {%- endif -%}
+    <div class="post-content">
+      {{ page.content | safe }}
+    </div>
+    {% if not page.extra.no_comments %}
+    <hr />
+    <div>
+      <p>You can provide feedback via mailing list
+        <a href="mailto:~hauleth/blog@lists.sr.ht?subject=[Comment] {{
+          page.title }}">~hauleth/blog@lists.sr.ht</a>
+          (<a href="https://lists.sr.ht/~hauleth/blog">archive</a>).</p>
+    </div>
+    {% endif %}
+  </div>
+{%- endblock main -%}
