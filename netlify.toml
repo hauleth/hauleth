@@ -2,3 +2,8 @@
   for = "/*"
   [headers.values]
     Permission-Policy = "interest-cohort=()"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[context.deploy-preview]
+  command = "zola build --drafts"
