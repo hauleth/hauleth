@@ -32,9 +32,9 @@ Elixir gained 4 new log levels to total 8 (from most verbose to least verbose):
 
 <small>* new levels</small>
 
-This allow to provide finer graded verbosity control, however due to
-compatibility reasons, in Elixir backends we need to translate these levels back
-to "old" set of 4. The current table looks like:
+This allow to provide finer graded verbosity control, due to compatibility
+reasons, in Elixir backends we need to translate these levels back to "old" set
+of 4. The current table looks like:
 
 | Call level            | What Elixir backend will see |
 | --                    | --                           |
@@ -49,9 +49,9 @@ to "old" set of 4. The current table looks like:
 
 <small>* "translated" messages</small>
 
-However we can set verbosity to all levels. This may be confusing during the
-transition period, but we cannot change the behaviour until Elixir 2 (which is
-not happening any time soon).
+We can set verbosity to all levels. This may be confusing during the transition
+period, but we cannot change the behaviour until Elixir 2 (which is not
+happening any time soon).
 
 Usage of the new levels is "obvious":
 
@@ -170,7 +170,7 @@ will not be covered there, I suggest looking into [Erlang documentation](https:/
 One of the biggest new features in the Elixir 1.11 is support for structured
 logging. This mean that the log message do not need to be free-form string, but
 instead we can pass structure, that can provide more machine-readable data for
-processing in log aggregators. In Elixir 1.11 is is simple as passing map as a
+processing in log aggregators. In Elixir 1.11 is simple as passing map as a
 first argument to the `Logger` macros:
 
 ```elixir
@@ -276,9 +276,9 @@ presenting the "human readable" form as well:
 }
 ```
 
-Additionally you can see there that we can have more information available in
-the structured log that would otherwise needed to be crammed somewhere into the
-text message, even if it is not important in "regular" Ops observability.
+You can see there that we can have more information available in the structured
+log that would otherwise needed to be crammed somewhere into the text message,
+even if it is not important in "regular" Ops observability.
 
 This can raise a question - why not use metadata for such functionality, like it
 is available in [`LoggerJSON`][] or [`Ink`][]? The reason is that their reason
@@ -300,7 +300,6 @@ Logger.error(
   },
   # Metadata
   %{
-    domain: [:otp, :elixir],
     error_logger: %{tag: :error_msg},
     report_cb: &GenServer.format_report/1
   }
@@ -398,7 +397,7 @@ important for us. [Erlang even prepared some useful filters][logger_filters]:
   that metadata is for filtering?). It supports multiple possible relations
   between the log domain and defined domain.
 - `level` - allow filtering (in or out) messages depending on their level, in
-  both directions. So it will allow you to filter messages with higher level for
+  both directions. It will allow you to filter messages with higher level for
   some handlers. Just remember, that it will not receive messages that will not
   pass primary/module level.
 - `progress` - filters all reports from `supervisor` and
@@ -410,13 +409,13 @@ important for us. [Erlang even prepared some useful filters][logger_filters]:
 
 ### Modifying a message
 
-Sometimes (hopefully rarely) there is need to alter messages in the system. For
-example we may need to prevent sensitive information from being logged. When
-using "old" Elixir approach you could abuse translators, but that was error
-prone, as first successful translator was breaking pipeline, so you couldn't
-just smash one on top and then keep rest working as is. With "new" approach and
-structured logging you can just traverse the report and replace all occurences
-of the unsafe data with anonymised data. For example:
+Sometimes there is need to alter messages in the system. For example we may need
+to prevent sensitive information from being logged. When using "old" Elixir
+approach you could abuse translators, but that was error prone, as first
+successful translator was breaking pipeline, so you couldn't just smash one on
+top and then keep rest working as is. With "new" approach and structured logging
+you can just traverse the report and replace all occurences of the unsafe data
+with anonymised data. For example:
 
 ```elixir
 def filter_out_password(%{msg: {:report, report}} = event, _opts) do
@@ -454,13 +453,13 @@ defp replace(other), do: other
 This snippet will replace all occurences of `:password` or `"password"` with
 filtered out value.
 
-There is disadvantage of such approach though - it will make all messages with
-such fields allowed in case if your filter has `:filter_default` set to `:stop`.
-That mean, that if you want to make some of them rejected anyway, then you will
-need to manually add additional step to reject messages that do not fit into
-your patterns. Alternatively you can use `filter_default: :log` and then use
-opt-out logging. There currently is no way to alter the message and make other
-filters decide whether log it or not (as of OTP 24).
+The disadvantage of such approach - it will make all messages with such fields
+allowed in case if your filter has `:filter_default` set to `:stop`. That mean,
+that if you want to make some of them rejected anyway, then you will need to
+manually add additional step to reject messages that do not fit into your
+patterns. Alternatively you can use `filter_default: :log` and then use opt-out
+logging. There currently is no way to alter the message and make other filters
+decide whether log it or not (as of OTP 24).
 
 ## Summary
 
