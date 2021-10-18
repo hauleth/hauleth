@@ -3,7 +3,7 @@
 {%- import "macros/toc.html" as toc -%}
 
 {%- block title -%}
-    <title>{{ page.title }} - {{  config.extra.author }}</title>
+  <title>{{ page.title }} - {{  config.extra.author }}</title>
 {%- endblock title -%}
 
 {%- block main -%}
@@ -24,7 +24,28 @@
     <div class="post-content e-content">
       {{ page.content | safe }}
     </div>
-    {% if not page.extra.no_comments %}
+    {%- if page.extra.thanks -%}
+    <hr />
+    <p>
+      <b>Special thanks</b>:
+      <ul>
+        {%- for person in page.extra.thanks -%}
+        <li class="h-card">
+          {%- if person is object -%}
+            {%- if person.url -%}
+              <a class="u-url p-name" href="{{ person.url }}">{{ person.name }}</a>
+            {%- else -%}
+              <span class="p-name">{{ person.name }}</span>
+            {%- endif -%}
+          {%- else -%}
+            <span class="p-name">{{ person }}</span>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    </p>
+    {%- endif -%}
+    {%- if not page.extra.no_comments -%}
     <hr />
     <div>
       <p>You can provide feedback via mailing list
@@ -32,6 +53,10 @@
           page.title }}">~hauleth/blog@lists.sr.ht</a>
           (<a href="https://lists.sr.ht/~hauleth/blog">archive</a>).</p>
     </div>
-    {% endif %}
+    {%- endif -%}
   </article>
 {%- endblock main -%}
+
+{#
+  vi: ft=jinja
+#}

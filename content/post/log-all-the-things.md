@@ -9,10 +9,13 @@ tags = [
   "programming",
   "observability"
 ]
+
+[[extra.thanks]]
+name = "Kai Wern Choong"
 +++
 
 In Elixir 1.11 landed set of new features that allows for more powerful logging
-by utilising Erlang's [`logger`][erl-log] features. Here I will try to descibe
+by utilising Erlang's [`logger`][erl-log] features. Here I will try to describe
 new possibilities and how You can use them to improve your logs.
 
 <!-- more -->
@@ -102,7 +105,7 @@ Logger.debug("I will not be printed")
 # Nothing got logged as top-level verbositi is still set to `:error`
 ```
 
-Of course it will not work if you decide to use [compile time purging](https://hexdocs.pm/logger/Logger.html#module-application-configuration).
+Of course it will not work if you decide to use [compile time purging][logger-purge]
 
 ## Logger handlers {#handlers}
 
@@ -144,13 +147,14 @@ arguments:
       hierarchy which then can be used for filtering. All events fired using
       `Logger` macros and functions will have `:elixir` prepended to their
       domain list.
-    - `:report_cb` - function that will be used to format `{:report, map() | keyword()}`
-      messages. This can be either 1-ary function, that takes report and returns
-      `{:io.format(), [term()]}` leaving truncation and further formatting up to
-      the main formatter, or 2-ary function that takes report and configuration
-      map `%{depth: pos_integer() | :unlimited, chars_limit: pos_integer() |
-      :unlimited, single_line: boolean()}` and returns already formatted
-      `:unicode.chardata()`. More about it can be found in [separate section](#structured-logging).
+    - `:report_cb` - function that will be used to format `{:report, map() |
+      keyword()}` messages. This can be either 1-ary function, that takes report
+      and returns `{:io.format(), [term()]}` leaving truncation and further
+      formatting up to the main formatter, or 2-ary function that takes report
+      and configuration map `%{depth: pos_integer() | :unlimited, chars_limit:
+      pos_integer() | :unlimited, single_line: boolean()}` and returns already
+      formatted `:unicode.chardata()`. More about it can be found in [separate
+      section](#structured-logging).
 
 Return value of this function is ignored. If there will be any exception raised
 when calling this function, then it will be captured and failing handler will be
@@ -163,7 +167,7 @@ are called in separate process. This mean that wrongly written Erlang handler
 can cause quite substantial load on application.
 
 To read on other, optional, callbacks that can be defined by Erlang handler, that
-will not be covered there, I suggest looking into [Erlang documentation](https://erlang.org/doc/man/logger.html#formatter-callback-functions).
+will not be covered there, I suggest looking into [Erlang documentation][formatter_cb].
 
 ## Structured logging {#structured-logging}
 
@@ -328,7 +332,7 @@ filtering or formatting of the event.
 
 The rule of thumb you can follow is:
 
-> If it is thing that you will want to filter on, then it propably should be
+> If it is thing that you will want to filter on, then it probably should be
 > part of the metadata. If you want to aggregate information or just display
 > them, it should be part of the message report.
 
@@ -414,7 +418,7 @@ to prevent sensitive information from being logged. When using "old" Elixir
 approach you could abuse translators, but that was error prone, as first
 successful translator was breaking pipeline, so you couldn't just smash one on
 top and then keep rest working as is. With "new" approach and structured logging
-you can just traverse the report and replace all occurences of the unsafe data
+you can just traverse the report and replace all occurrences of the unsafe data
 with anonymised data. For example:
 
 ```elixir
@@ -450,7 +454,7 @@ end
 defp replace(other), do: other
 ```
 
-This snippet will replace all occurences of `:password` or `"password"` with
+This snippet will replace all occurrences of `:password` or `"password"` with
 filtered out value.
 
 The disadvantage of such approach - it will make all messages with such fields
@@ -476,3 +480,5 @@ I am thrilled to see what will people create using all that power.
 [`LoggerJSON`]: https://github.com/Nebo15/logger_json
 [`Ink`]: https://hex.pm/packages/ink
 [logger_filters]: https://erlang.org/doc/man/logger_filters.html
+[logger-purge]: https://hexdocs.pm/logger/Logger.html#module-application-configuration
+[formatter_cb]: https://erlang.org/doc/man/logger.html#formatter-callback-functions
