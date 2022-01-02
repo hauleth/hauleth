@@ -1,6 +1,6 @@
 +++
 title = "Log all the things"
-date = 2021-10-13
+date = 2022-01-02
 
 [taxonomies]
 tags = [
