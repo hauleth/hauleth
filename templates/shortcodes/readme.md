@@ -10,7 +10,7 @@ href="https://erlef.org/wg/observability">Erlang Ecosystem Foundation
 Observability WG</a></span> where we are trying to improve observability
 features in Erlang ecosystem.
 
-I am currently contracted. If you want to inquiry me about my services then
+I am open for hire. If you want to inquiry me about my services then
 contact me at <a class="u-email"
 href="mailto:lukasz@niemier.pl">lukasz@niemier.pl</a>.
 

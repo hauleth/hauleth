@@ -24,6 +24,12 @@
     <div class="post-content e-content">
       {{ page.content | safe }}
     </div>
+    {%- if config.extra.for_hire -%}
+    <div class="for-hire">
+      <p>Author of this post is curently open for hire.<p>
+      <p>You can contact me at <a href="lukasz@niemier.pl">lukasz@niemier.pl</a></p>
+    </div>
+    {%- endif -%}
     {%- if page.extra.thanks -%}
     <hr />
     <p>

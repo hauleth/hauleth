@@ -1,7 +1,6 @@
 +++
 title = "Log all the things"
 date = 2021-10-13
-draft = true
 
 [taxonomies]
 tags = [

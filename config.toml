@@ -21,6 +21,7 @@ highlight_theme = "nord"
 
 [extra]
 author = "Hauleth"
+for_hire = true
 theme_color = "blue"
 
 logo_text = "~hauleth"
