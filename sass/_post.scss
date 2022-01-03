@@ -75,32 +75,12 @@
   }
 
   ul {
-    list-style: none;
+    list-style: "\29bf";
 
-    li:before {
-      content: '⦿';
-      position: absolute;
-      left: -20px;
-      color: var(--accent);
-    }
     ul {
+      list-style: "\25a0";
 
-      li:before {
-        content: '■';
-        position: absolute;
-        left: -20px;
-        color: var(--accent);
-      }
-
-      ul {
-
-        li:before {
-          content: '►';
-          position: absolute;
-          left: -20px;
-          color: var(--accent);
-        }
-      }
+      ul { list-style: "\25ba"; }
     }
   }
 }
