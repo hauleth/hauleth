@@ -23,18 +23,15 @@
   }
 
   .copyright {
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     // so `--light-color-secondary` color exists no where else in the stylings
     // color: var(--light-color-secondary);
     // As a substitute, I'm going to use the alpha-70 version of accent.
     color: var(--accent-alpha-70);
-
-    &--user {
-      margin: auto;
-      text-align: center;
-    }
 
     & > *:first-child:not(:only-child) {
       margin-right: 10px;
@@ -45,7 +42,7 @@
     }
 
     @media (max-width: $tablet-max-width) {
-      flex-direction: column;
+      // flex-direction: column;
       margin-top: 10px;
     }
   }

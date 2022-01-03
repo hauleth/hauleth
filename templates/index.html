@@ -9,6 +9,15 @@
   {%- endif -%}
 {% endblock %}
 
+{% block copyright %}
+  <div class="copyright">
+    <div class="copyright--user">{{ config.extra.copyright | safe }}</div>
+    <div class="copyright--tracking">
+      Public tracking available at <a href="https://plausible.io/hauleth.dev">Plausible.io</a>
+    </div>
+  </div>
+{% endblock copyright %}
+
 {% block script %}
   <script async defer data-domain="hauleth.dev" src="https://plausible.io/js/plausible.js"></script>
 {% endblock script %}
