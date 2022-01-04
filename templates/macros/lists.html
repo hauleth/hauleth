@@ -1,0 +1,25 @@
+{% macro list_pages() %}
+<section class="posts">
+
+    {%- for page in paginator.pages -%}
+
+    <div class="post on-list">
+        <h3 class="post-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h3>
+
+        {{ posts::meta(page=page, author=config.extra.show_author) }}
+
+        <div class="post-content">
+            {%  if page.description -%}
+            {{ page.description }}
+            {#- end if-check for description -#}
+            {%  elif page.summary -%}
+            {{ page.summary | safe }}
+            {%  endif -%}
+        </div>
+    </div>
+    {# End of pagination for-loop #}
+    {%- endfor -%}
+</section>
+{% endmacro list_pages %}

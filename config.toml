@@ -46,9 +46,10 @@ copyright = "copyright by <a href=\"https://hauleth.dev\" rel=me>hauleth</a>"
 # Menu items to display. You define a url and the name of the menu item.
 # NOTE: `$BASE_URL/` must be included in the url name.
 main_menu = [
-  {url="/post/", name="blog"},
+  {url="https://plan.cat/~hauleth", name=".plan", rel="me"},
   {url="https://twitter.com/hauleth", name="twitter", rel="me"},
   {url="https://github.com/hauleth", name="github", rel="me"},
+  {url="https://gitlab.com/hauleth", name="gitlab", rel="me"},
 ]
 
 # Displayed after teaser text for a blog post.

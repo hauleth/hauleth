@@ -48,6 +48,8 @@
     }
   }
 
+  &.on-list &-title { --border: none; }
+
   &-tags {
     display: block;
     margin-bottom: 20px;

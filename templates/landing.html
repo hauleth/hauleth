@@ -1,0 +1,14 @@
+{% extends "index.html" -%}
+
+{%- block main -%}
+  <section>
+    <article>
+      {{ section.content | safe }}
+    </article>
+  </section>
+
+  <div>
+    <h2>blog</h2>
+    {{ lists::list_pages() }}
+  </div>
+{%- endblock main -%}
