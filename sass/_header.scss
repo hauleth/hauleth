@@ -13,6 +13,10 @@
 }
 
 .header {
+  @media print {
+    display: none;
+  }
+
   display: flex;
   flex-direction: column;
   position: relative;

@@ -1,6 +1,10 @@
 @import "variables";
 
 .footer {
+  @media print {
+    display: none;
+  }
+
   padding: 40px 0;
   flex-grow: 0;
   opacity: .5;
