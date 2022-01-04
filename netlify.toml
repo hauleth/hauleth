@@ -11,3 +11,4 @@
 [[redirects]]
   from = "/post"
   to = "/"
+  force = true
