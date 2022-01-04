@@ -18,8 +18,15 @@
             {{ page.summary | safe }}
             {%  endif -%}
         </div>
+        {% if page.description or page.summary -%}
+        <div>
+            <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
+        </div>
+        {% endif -%}
     </div>
     {# End of pagination for-loop #}
     {%- endfor -%}
+    {#- I don't put pagination here like Terminal does. I don't like how
+    the buttons move with the size of post entries in the content div. -#}
 </section>
 {% endmacro list_pages %}
