@@ -24,7 +24,13 @@ Twitter:
 - Kobil GmbH - Erlang/Elixir Developer - 2019-2020
 - Remote Inc. - Senior Backend Engineer - 2020-2021
 - Hauleth.dev - Consultant - 2021+
-  + Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
+  + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
+
+### Community awards
+
+- ElixirForum Member of the Year 2019
+- ElixirForum Member of the Year 2020
+- ElixirForum Member of the Month 2018
 
 ### Other fields
 
@@ -44,6 +50,7 @@ Twitter:
 
 - GitHub: <https://github.com/hauleth>
 - GitLab: <https://gitlab.com/hauleth>
+- StackOverflow: <https://stackoverflow.com/users/1017941/hauleth>
 
 ### Notable projects
 
