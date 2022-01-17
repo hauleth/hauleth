@@ -1,12 +1,18 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Permission-Policy = "interest-cohort=()"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
+[build]
+  command = "zola build"
+  publish = "public/"
 
 [context.deploy-preview]
   command = "zola build --drafts"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Disable Google cohort tracking
+    Permission-Policy = "interest-cohort=()"
+    # Disallow showing the website in frames
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
 
 [[redirects]]
   from = "/post"
