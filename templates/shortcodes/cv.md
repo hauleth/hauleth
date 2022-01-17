@@ -28,8 +28,9 @@ Twitter:
 
 ### Community awards
 
-- ElixirForum Member of the Year 2019
+- ElixirForum Member of the Year 2021
 - ElixirForum Member of the Year 2020
+- ElixirForum Member of the Year 2019
 - ElixirForum Member of the Month 2018
 
 ### Other fields
@@ -51,6 +52,30 @@ Twitter:
 - GitHub: <https://github.com/hauleth>
 - GitLab: <https://gitlab.com/hauleth>
 - StackOverflow: <https://stackoverflow.com/users/1017941/hauleth>
+
+### Notable contributions
+
+- Elixir language:
+  + Logger reimplementation on top of Erlang's `logger` module
+  + `mix test --cover` CLI output
+  + Support for `NO_COLOR` environment variable
+  + `is_struct/1`
+  + Fixing module inspection on case-insensitive file systems
+- Erlang OTP:
+  + Support for custom devices in `logger_std_h`
+  + Fixing `socket` module to support broader set of protocols (for example
+    ICMP)
+  + Support for global metadata in `logger`
+  + Support for reconfiguration of `logger` (needed for better Mix and Rebar3
+    integration)
+  + Several fixes to `logger` and `socket` modules
+- Git:
+  + Add support for Elixir in diff
+- Ecto:
+  + Support aggregations over `*`
+  + Better error on duplicated `schema` block
+- Elixir MongoDB driver
+  + Support for transactions
 
 ### Notable projects
 
