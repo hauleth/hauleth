@@ -1,7 +1,6 @@
 +++
 title = "Who Watches Watchmen? - Part 1"
 date = 2022-01-17T21:22:18+01:00
-draft = true
 
 description = """
 A lot of application use systems like Kubernetes for their deployment. In my
