@@ -18,10 +18,9 @@ tags = [
 ]
 +++
 
-I gave talk about this topic on CODE Beam V Americas, but I think it went
-terribly wrong. In this post I will try to describe what my presentation
-was meant to be about. For anyone participating sorry for my terrible
-performance and I hope that this article will be clearer.
+I gave talk about this topic on CODE Beam V Americas, but I wasn't really
+satisfied with it. In this post I will try to describe what my presentation was
+meant to be about.
 
 If you are wondering about the presentation, [the slides are on SpeakerDeck][slides].
 
