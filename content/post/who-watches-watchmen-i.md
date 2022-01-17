@@ -53,7 +53,7 @@ to be handled in one or another way. The most basic problems are:
 System supervisor is a process started early in the OS boot, that should handle
 starting and managing all other processes that will be run on our system. It is
 often the init process (first process started by the OS that is running with PID
-1) or it is first (and sometimes only) process started by the init process.
+1\) or it is first (and sometimes only) process started by the init process.
 Popular examples of such supervisors (often integrated with init systems):
 
 - SysV which is "traditional" implementation that originates at UNIX System
