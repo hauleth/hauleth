@@ -109,12 +109,9 @@ the sooner it can take load from other machines.
 
 Different tools take different approach to solve that issue there. `systemd`
 take approach that is derived from `launchd` - do not do stuff, that is not
-needed. It achieved that by merging D-Bus into the `systemd` itself, and then
-making all service to be D-Bus daemons (which are started on request), and
-additionally it provides a bunch of triggers for that daemons. We can trigger on
-action of other services (obviously), but also on stuff like socket activity,
-path creation/modification, mounts, connection or disconnection of device,
-time events, etc.
+needed. We can trigger on action of other services (obviously), but also on
+stuff like socket activity, path creation/modification, mounts, connection or
+disconnection of device, time events, etc.
 
 ---
 
