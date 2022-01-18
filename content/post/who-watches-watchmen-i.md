@@ -202,7 +202,7 @@ Description=Hello World service
 
 [Service]
 Environment=PORT=80
-ExecStart=/opt/plug/bin/plug start
+ExecStart=/opt/hello/bin/hello start
 ```
 
 Now you can create file with that content in
@@ -283,7 +283,7 @@ Description=Hello World service
 # Define `Type=` to `notify`
 Type=notify
 Environment=PORT=80
-ExecStart=/opt/plug/bin/plug start
+ExecStart=/opt/hello/bin/hello start
 WatchdogSec=1min
 ```
 
@@ -404,7 +404,7 @@ Description=Hello World service
 [Service]
 Environment=PORT=80
 Type=notify
-ExecStart=/opt/plug/bin/plug start
+ExecStart=/opt/hello/bin/hello start
 WatchdogSec=1min
 ```
 
@@ -459,7 +459,7 @@ Requires=network.target
 [Service]
 Type=notify
 Environment=PORT=80
-ExecStart=/opt/plug/bin/plug start
+ExecStart=/opt/hello/bin/hello start
 WatchdogSec=1min
 
 # We need to add capability to be able to bind on port 80
