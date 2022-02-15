@@ -12,6 +12,10 @@ tags = [
  "common_test",
  "commoner"
 ]
+
+[[extra.thanks]]
+name = "José Valim"
+why = "for reading it through and reviewing before publishing"
 +++
 
 In my new job I have opportunity to work a little bit more with Erlang code and
@@ -170,10 +174,6 @@ about proposed API for Commoner. You can ping me:
 
 - On [Elixir forum thread about Commoner][forum]
 - On Twitter via `@hauleth`
-
-### Special thanks
-
-- José Valim - for reading it through and reviewing before publishing
 
 [ct]: http://erlang.org/doc/apps/common_test/basics_chapter.html
 [ctex]: https://github.com/Comcast/ctex

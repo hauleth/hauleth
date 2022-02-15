@@ -52,3 +52,12 @@
         #<a class="p-category" href="{{get_taxonomy_url(kind="tags", name=tag )}}">{{ tag }}</a>
     {% endfor -%}
 {% endmacro tags %}
+
+{% macro thanks(who) %}
+  {%- if who.why -%}
+    {{ who.name }} - {{ who.why }}
+  {%- else -%}
+    {{ who.name }}
+  {%- endif -%}
+{% endmacro %}
+

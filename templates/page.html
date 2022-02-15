@@ -9,7 +9,7 @@
 {%- block main -%}
   <article class="post h-entry">
     <h1 class="post-title p-name">
-      <a href="{{ page.permalink }}">{{ page.title }}</a>
+      <a id="top" href="{{ page.permalink }}">{{ page.title }}</a>
     </h1>
     {{ posts::meta(page=page, author=config.extra.show_author) }}
     {%- if page.toc | length >= 5 -%}
@@ -39,9 +39,9 @@
         <li class="h-card">
           {%- if person is object -%}
             {%- if person.url -%}
-              <a class="u-url p-name" href="{{ person.url }}">{{ person.name }}</a>
+              <a class="u-url p-name" href="{{ person.url }}">{{ posts::thanks(who=person) }}</a>
             {%- else -%}
-              <span class="p-name">{{ person.name }}</span>
+              <span class="p-name">{{ posts::thanks(who=person) }}</span>
             {%- endif -%}
           {%- else -%}
             <span class="p-name">{{ person }}</span>
