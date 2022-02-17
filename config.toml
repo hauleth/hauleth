@@ -17,7 +17,11 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-highlight_theme = "nord"
+highlight_theme = "css"
+# TODO: Write custom theme that will fit the overall colouring better
+highlight_themes_css = [
+  { theme = "nord", filename = "syntax-theme.css" },
+]
 
 [extra]
 author = "Hauleth"
