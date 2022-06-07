@@ -4,7 +4,7 @@ date = 2022-01-17T21:22:18+01:00
 
 description = """
 A lot of application use systems like Kubernetes for their deployment. In my
-humble opinion it is often overkill as system ,that offers most of the stuff such
+humble opinion it is often overkill as system, that offers most of the stuff such
 thing provide, is already present in your OS. In this article I will try to
 present how to utilise the most popular system supervisor from Elixir
 applications.
