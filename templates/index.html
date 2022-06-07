@@ -7,6 +7,18 @@
   {%- if config.generate_feed -%}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path=config.feed_filename) | safe}}">
   {%- endif -%}
+{% endblock %}
+
+{% block og_preview %}
+  {{ social::og_preview() }}
+
+  {%- if config.extra.twitter.site -%}
+    <meta name="twitter:site" content="{{ config.extra.twitter.site }}" />
+  {%- endif -%}
+  {%- if config.extra.twitter.creator -%}
+    <meta name="twitter:creator" content="{{ config.extra.twitter.creator }}" />
+  {%- endif -%}
+
   {%- if config.extra.webmention -%}
     <link rel="webmention" href="{{ config.extra.webmention }}" >
   {%- endif -%}

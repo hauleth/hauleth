@@ -66,3 +66,7 @@ favicon = "favicon-32x32.png"
 og_preview_img = "banner.png"
 
 webmention = "https://webmention.io/hauleth.dev/webmention"
+
+[extra.twitter]
+  site = "@hauleth"
+  creator = "@hauleth"
