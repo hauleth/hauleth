@@ -61,15 +61,27 @@
     </div>
     {%- endif -%}
 
-    <!--
     <div class="webmentions">
       {%- set webmentions = load_data(url="https://webmention.io/api/mentions.jf2?target=" ~ page.permalink, format="json") -%}
-      {%- for mention in webmentions.children -%}
-        Foo
+      {%- if webmentions.children | length > 0 -%}
+        <p>Webmentions:</p>
+        <ul>
+          {%- for mention in webmentions.children -%}
+          <li>
+            <a href="{{ mention.url }}">
+              {%- if mention.name -%}
+                {{ mention.name }}
+              {%- else -%}
+                {{ mention.url }}
+              {%- endif -%}
+            </a>
+            by <a href="{{ mention.author.url }}">{{ mention.author.name }}</a>
+          </li>
+          {%- endfor -%}
+        </ul>
       {%- else -%}
         No webmentions yet, you can be first.
-      {%- endfor -%}
+      {%- endif -%}
     </div>
-    -->
   </article>
 {%- endblock main -%}

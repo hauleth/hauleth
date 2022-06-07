@@ -1,0 +1,16 @@
+name: Trigger Netlify rebuild
+on:
+  schedule:
+    # Run every 4h
+    - cron: '0 */4 * * *'
+
+jobs:
+  trigger:
+    name: Send trigger
+    runs-on: ubuntu-latest
+    env:
+      BUILD_HOOK_URL: 'https://api.netlify.com/build_hooks/629f4bdea589057c66219efd'
+    steps:
+      - name: Run cURL request
+        run: |
+          curl -X POST -d '{}' "$BUILD_HOOK_URL"
