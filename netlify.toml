@@ -22,3 +22,26 @@
   from = "/post"
   to = "/"
   force = true
+
+[[plugins]]
+  package = "netlify-plugin-webmentions"
+
+  [plugins.inputs]
+  feedPath = "atom.xml"
+
+[[plugins]]
+  package = "netlify-plugin-minify-html"
+
+  [plugins.inputs]
+    contexts = [
+      'production',
+      'branch-deploy',
+      'deploy-preview'
+    ]
+
+  [plugins.inputs.minifierOptions]
+    useShortDoctype = true
+    collapseBooleanAttributes = true
+    collapseWhitespace = true
+    conservativeCollapse = true
+    removeComments = true
