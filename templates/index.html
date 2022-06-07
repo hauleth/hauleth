@@ -7,6 +7,9 @@
   {%- if config.generate_feed -%}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path=config.feed_filename) | safe}}">
   {%- endif -%}
+  {%- if config.extra.webmention -%}
+    <link rel="webmention" href="{{ config.extra.webmention }}" >
+  {%- endif -%}
 {% endblock %}
 
 {% block copyright %}

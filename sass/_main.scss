@@ -97,6 +97,13 @@ code {
   font-size: .95rem;
 }
 
+// code[data-lang]::before {
+//   content: attr(data-lang);
+//   text-align: right;
+//   position: absolute;
+//   top: 0;
+// }
+
 pre {
   font-family: ui-monospace, monospace;
   padding: 20px 10px;

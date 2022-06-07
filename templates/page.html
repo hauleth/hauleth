@@ -60,5 +60,14 @@
           (<a href="https://lists.sr.ht/~hauleth/blog">archive</a>).</p>
     </div>
     {%- endif -%}
+
+    <div class="webmentions">
+      {%- set webmentions = load_data(url="https://webmention.io/api/mentions.jf2?target=" ~ page.permalink, format="json") -%}
+      {%- for mention in webmentions.children -%}
+        Foo
+      {%- else -%}
+        No webmentions yet, you can be first.
+      {%- endfor -%}
+    </div>
   </article>
 {%- endblock main -%}
