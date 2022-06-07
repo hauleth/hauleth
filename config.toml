@@ -1,4 +1,4 @@
-base_url = "/"
+base_url = "https://hauleth.dev/"
 default_language = "en"
 
 title = "Hauleth's blog"
@@ -63,6 +63,6 @@ read_more = "read more"
 read_other_posts = "read other posts"
 
 favicon = "favicon-32x32.png"
-og_preview_img = "favicon-256x256.png"
+og_preview_img = "banner.png"
 
 webmention = "https://webmention.io/hauleth.dev/webmention"

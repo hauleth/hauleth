@@ -61,6 +61,7 @@
     </div>
     {%- endif -%}
 
+    <!--
     <div class="webmentions">
       {%- set webmentions = load_data(url="https://webmention.io/api/mentions.jf2?target=" ~ page.permalink, format="json") -%}
       {%- for mention in webmentions.children -%}
@@ -69,5 +70,6 @@
         No webmentions yet, you can be first.
       {%- endfor -%}
     </div>
+    -->
   </article>
 {%- endblock main -%}
