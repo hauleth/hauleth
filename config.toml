@@ -9,6 +9,7 @@ compile_sass = true
 theme = "zerm"
 
 generate_feed = true
+minify_html = true
 
 taxonomies = [
   {name = "tags"},

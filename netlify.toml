@@ -30,21 +30,4 @@
   feedPath = "atom.xml"
 
 [[plugins]]
-  package = "netlify-plugin-minify-html"
-
-  [plugins.inputs]
-    contexts = [
-      'production',
-      'branch-deploy',
-      'deploy-preview'
-    ]
-
-  [plugins.inputs.minifierOptions]
-    useShortDoctype = true
-    collapseBooleanAttributes = true
-    collapseWhitespace = true
-    conservativeCollapse = true
-    removeComments = true
-
-[[plugins]]
   package = "netlify-plugin-submit-sitemap"
