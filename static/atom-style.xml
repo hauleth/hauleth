@@ -12,30 +12,7 @@
         <meta name="referrer" content="none" />
 
         <!-- FAVICONS CAN GO HERE -->
-        <style type="text/css">
-          body {
-            color: #222;
-            font-family: apple-system, system-ui, sans-serif;
-          }
-          .container {
-            align-item: center;
-            display: flex;
-            justify-content: center;
-          }
-          .item {
-            max-width: 768px;
-          }
-          a {
-            color: #4166f5;
-            text-decoration: none;
-          }
-          a:visited {
-            color: #3f00ff;
-          }
-          a:hover {
-            text-decoration: underline;
-          }
-        </style>
+        <link href="/feed.css" rel="stylesheet" />
       </head>
       <body>
         <div class="container">

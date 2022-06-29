@@ -315,7 +315,7 @@ end
 Now restarting our service will not finish immediately, but will wait until our
 service will declare that it is ready.
 
-```shell
+```
 # systemctl restart hello.service
 ```
 
@@ -357,7 +357,7 @@ end
 
 Now when we will shutdown our application by:
 
-```shell
+```
 # systemctl stop hello.service
 ```
 
