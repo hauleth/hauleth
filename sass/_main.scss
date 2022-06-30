@@ -38,13 +38,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .zola-anchor {
-    font-size: 1.5rem;
+    font-size: .75em;
     visibility: hidden;
     margin-left: 0.5rem;
     vertical-align: 1%;
     text-decoration: none;
     border-bottom-color: transparent;
     cursor: pointer;
+    color: var(--accent);
 
     @media (hover: none){
       visibility: visible;
@@ -247,4 +248,18 @@ hr {
   border: none;
   background: var(--border-color);
   height: 1px;
+}
+
+ol {
+  counter-reset: li;
+  list-style: none;
+
+  li {
+    counter-increment: li;
+
+    // Todo change it to ::marker when Safari will support it
+    &::before {
+      content: counters(li, ".") ". ";
+    }
+  }
 }
