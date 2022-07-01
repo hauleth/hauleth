@@ -508,6 +508,6 @@ articles mentioned above for more details.
 This blog post is already quite lengthy, so I will split it into separate parts.
 There probably will be 3 of them:
 
-- [Part 1 - Basics, security, and FD passing (this one)](?)
+- <a href="#top">Part 1 - Basics, security, and FD passing (this one)</a>
 - Part 2 - Socket activation
 - Part 3 - Logging
