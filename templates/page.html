@@ -68,7 +68,7 @@
         <ul>
           {%- for mention in webmentions.children -%}
           <li>
-            <a href="{{ mention.url }}">
+            <a href="{{ mention.url }}" class="webmention">
               {%- if mention.name -%}
                 {{ mention.name }}
               {%- else -%}
