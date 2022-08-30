@@ -68,15 +68,17 @@
         <ul>
           {%- for mention in webmentions.children -%}
           <li>
-            <a href="{{ mention.url }}" class="webmention">
-              {%- if mention.name -%}
+            {%- if mention.name -%}
+              <a href="{{ mention.url }}">
                 {{ mention.name }}
+              </a>
               {%- else -%}
+              <a href="{{ mention.url }}" class="url-only">
                 {{ mention.url }}
-              {%- endif -%}
-            </a>
+              </a>
+            {%- endif -%}
             {%- if mention.author.name != "" -%}
-              by <a href="{{ mention.author.url }}">{{ mention.author.name }}</a>
+              by <a href="{{ mention.author.url }}">{{ mention.author.name | truncate(length=15) }}</a>
             {%- endif -%}
           </li>
           {%- endfor -%}
