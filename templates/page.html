@@ -75,7 +75,9 @@
                 {{ mention.url }}
               {%- endif -%}
             </a>
-            by <a href="{{ mention.author.url }}">{{ mention.author.name }}</a>
+            {%- if mention.author.name != "" -%}
+              by <a href="{{ mention.author.url }}">{{ mention.author.name }}</a>
+            {%- endif -%}
           </li>
           {%- endfor -%}
         </ul>

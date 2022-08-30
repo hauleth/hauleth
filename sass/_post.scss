@@ -159,7 +159,6 @@
   margin: 2em 0;
 }
 
-.webmention {
-  overflow: hidden;
-  text-overflow: ellipsis;
+.webmentions li {
+  line-break: loose;
 }
