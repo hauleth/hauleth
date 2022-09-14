@@ -2,11 +2,11 @@
 
 ## Personal information
 
-Date of Birth:
-  1993-03-16
-
 Email:
   <lukasz@niemier.pl>
+
+Website:
+  <https://hauleth.dev>
 
 Twitter:
   [@hauleth](https://twitter.com/hauleth)
