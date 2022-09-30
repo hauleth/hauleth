@@ -27,12 +27,10 @@ Twitter:
   + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
 - Eiger - Senior Backend Engineer - 2022+
 
-### Community awards
+### Organisations
 
-- ElixirForum Member of the Year 2021
-- ElixirForum Member of the Year 2020
-- ElixirForum Member of the Year 2019
-- ElixirForum Member of the Month 2018
+- Erlang Ecosystem Foundation - member of the Observability WG
+- OpenTelemetry Project - member of the Erlang WG
 
 ### Other fields
 
