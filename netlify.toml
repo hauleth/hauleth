@@ -30,9 +30,8 @@
 
 [[redirects]]
   from = "/.well-known/webfinger"
-  to = "/finger/:user.json"
+  to = "https://fosstodon.org/.well-known/webfinger?resource=acct:hauleth@fosstodon.org"
   status = 200
-  query = { resource = ":user" }
 
 [[plugins]]
   package = "netlify-plugin-webmentions"
