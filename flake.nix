@@ -19,17 +19,16 @@
           buildPhase = ''
             git submodule update --init --recursive --depth=1
             zola build -o $out
-            '';
+          '';
 
           dontInstall = true;
         };
-      in rec {
+      in
+      {
         packages = {
           inherit blog;
         };
         defaultPackage = blog;
-        /* apps.hello = flake-utils.lib.mkApp { drv = packages.hello; }; */
-        /* defaultApp = apps.hello; */
 
         devShells.default = pkgs.mkShell {
           inputsFrom = [ blog ];
