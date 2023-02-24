@@ -13,7 +13,6 @@ minify_html = true
 
 taxonomies = [
   {name = "tags"},
-  {name = "categories"},
 ]
 
 [markdown]
