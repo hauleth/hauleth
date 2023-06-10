@@ -3,7 +3,7 @@
   publish = "public/"
 
 [context.deploy-preview]
-  command = "zola build --drafts"
+  command = "zola build --drafts --base-url $DEPLOY_PRIME_URL"
 
 [[headers]]
   for = "/*"

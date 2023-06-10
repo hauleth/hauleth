@@ -7,7 +7,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        blog = pkgs.stdenv.mkDerivation {
+        blog = pkgs.stdenvNoCC.mkDerivation {
           name = "hauleth-blog";
           src = ./.;
 
@@ -28,7 +28,7 @@
           };
         };
       in rec {
-        packages = flake-utils.lib.flattenTree {
+        packages = {
           inherit blog;
         };
         defaultPackage = blog;

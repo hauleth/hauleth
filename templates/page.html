@@ -34,20 +34,10 @@
     {%- if page.extra.thanks -%}
     <hr />
     <p>
-      <b>Special thanks</b>:
+      <b>Special thanks to</b>:
       <ul>
         {%- for person in page.extra.thanks -%}
-        <li class="h-card">
-          {%- if person is object -%}
-            {%- if person.url -%}
-              <a class="u-url p-name" href="{{ person.url }}">{{ posts::thanks(who=person) }}</a>
-            {%- else -%}
-              <span class="p-name">{{ posts::thanks(who=person) }}</span>
-            {%- endif -%}
-          {%- else -%}
-            <span class="p-name">{{ person }}</span>
-          {%- endif -%}
-        </li>
+        <li class="h-card">{{ posts::thanks(who=person) }}</li>
         {%- endfor -%}
       </ul>
     </p>

@@ -19,6 +19,8 @@
               [Updated: <time class="dt-updated" datetime="{{ page.updated }}">{{ page.updated | date(format="%Y.%m.%d") }}</time>]
             {%- endif -%}
         </span>
+        ::
+        <time datetime="P{{ page.reading_time }}M">{{ page.reading_time }} min</time>
 
         {{ posts::taxonomies(taxonomy=page.taxonomies,
            disp_cat=config.extra.show_categories,
@@ -54,10 +56,14 @@
 {% endmacro tags %}
 
 {% macro thanks(who) %}
-  {%- if who.why -%}
-    {{ who.name }} - {{ who.why }}
+  {%- if who is object -%}
+    {%- if who.url -%}
+      <a class="u-url p-name" href="{{ who.url }}">{{ who.name }}</a>
+    {%- else -%}
+      <span class="p-name">{{ who.name }}</span>
+    {%- endif -%}
+    {%- if who.why %} for {{ who.why }}{%- endif -%}
   {%- else -%}
-    {{ who.name }}
+    <span class="p-name">{{ who }}</span>
   {%- endif -%}
 {% endmacro %}
-

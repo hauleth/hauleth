@@ -78,6 +78,10 @@ h4, h5, h6 {
 
 a {
   color: inherit;
+
+  &:hover {
+    color: var(--accent);
+  };
 }
 
 img {
@@ -149,33 +153,21 @@ blockquote {
     padding-right: 0;
   }
 
-  &:before {
-    content: '”';
-    font-family: Georgia, serif;
-    font-size: 3.875rem;
-    position: absolute;
-    left: -40px;
-    top: -20px;
-  }
-
-  p:first-of-type {
+  > :first-child {
     margin-top: 0;
-  }
-
-  p:last-of-type {
-    margin-bottom: 0;
-  }
-
-  p {
     position: relative;
+
+    &:before {
+      content: '>';
+      display: block;
+      position: absolute;
+      left: -25px;
+      color: var(--accent);
+    }
   }
 
-  p:before {
-    content: '>';
-    display: block;
-    position: absolute;
-    left: -25px;
-    color: var(--accent);
+  > :last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -262,9 +254,4 @@ ol {
       content: counters(li, ".") ". ";
     }
   }
-}
-
-.halmos {
-  text-align: right;
-  font-size: 1.5em;
 }
