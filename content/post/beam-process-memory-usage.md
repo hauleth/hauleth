@@ -419,7 +419,7 @@ handling process itself[^word]:
 > | … | … |
 > | Erlang process | 338 words when spawned, including a heap of 233 words. |
 >
-> -- <https://erlang.org/doc/efficiency_guide/advanced.html#Advanced>
+> -- [Erlang Efficiency Guide: 11. Advanced](https://erlang.org/doc/efficiency_guide/advanced.html#Advanced)
 
 As we can see, there are 105 words that are required and 233 words which are
 used for preallocated heap. But this is microbenchmarking, so as we do not need
