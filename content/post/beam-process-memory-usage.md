@@ -151,7 +151,7 @@ Bench.await_many(tasks)
 We already removed one problem (well, two in fact, but we will go into
 details in next section).
 
-## All your lists belongs to us now
+## All your lists are belongs to us now
 
 Erlang, like most of the functional programming languages, have 2 built-in
 sequence types:
