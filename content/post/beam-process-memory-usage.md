@@ -85,7 +85,7 @@ data that it store are:
 - Initial function that was run by the given process
 - PIDs to all ancestors of the given process
 
-Different processes abstractions (like `get_server`/`GenServer`, Elixir's
+Different processes abstractions (like `gen_server`/`GenServer`, Elixir's
 `Task`, etc.) can store even more metadata there, `logger` store process
 metadata in process dictionary, `rand` store state of the PRNGs in the process
 dictionary. it's used quite extensively by some OTP features.
