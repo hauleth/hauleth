@@ -25,7 +25,7 @@ Twitter:
 - Remote Inc. - Senior Backend Engineer - 2020-2021
 - Hauleth.dev - Consultant - 2021+
   + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
-- Eiger - Senior Backend Engineer - 2022+
+- Eiger - Senior Backend Engineer - 2022-2023
 
 ### Organisations
 
