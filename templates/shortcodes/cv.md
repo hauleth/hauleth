@@ -77,6 +77,8 @@ Twitter:
     + Support for `NO_COLOR` environment variable
     + `is_struct/1`
     + Fixing module inspection on case-insensitive file systems
+    + Support for parsing extra arguments via `mix eval` and `eval` command in
+    release
 - Erlang OTP:
     + Support for custom devices in `logger_std_h`
     + Fixing `socket` module to support broader set of protocols (for example
@@ -85,6 +87,7 @@ Twitter:
     + Support for reconfiguration of `logger` (needed for better Mix and Rebar3
       integration)
     + Several fixes to `logger` and `socket` modules
+    + Add support for τ constant in `math`
 - Git:
     + Add support for Elixir in diff
 - Ecto:
