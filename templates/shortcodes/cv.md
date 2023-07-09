@@ -20,12 +20,29 @@ Twitter:
 
 - Prograils - Junior Developer - 2013
 - Nukomeet - Full-stack Developer - 2015-2016
-- AppUnite - Full-stack Developer/DevOps - 2016-2019
+- AppUnite - Full-stack Developer/DevOps - 2016-2019:
+    + JaFolders/AlleFolders
+        * 2x performance improvement by optimising PostgreSQL usage
+        * Reduced geo-queries using PostGIS thanks to better indices and
+        materialised views usage
+        * Implementation of the UI and brochure viewer in Vue and SVG
+    + OneMedical/Helium Health
+        * Architectural redesign of application from Rails/MongoDB to
+        Phoenix/PostgreSQL
+        * Preparing hybrid deployment with on-premise/in-cloud system
+        * Migration of the existing deployments from MongoDB to PostgreSQL
 - Kobil GmbH - Erlang/Elixir Developer - 2019-2020
+    + Maintaining MongoDB driver for Elixir
+    + Implemented transactions for MongoDB driver in Elixir
 - Remote Inc. - Senior Backend Engineer - 2020-2021
 - Hauleth.dev - Consultant - 2021+
-  + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
+    + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
+        * Substantial query performance optimisations by optimising PostgreSQL indices
 - Eiger - Senior Backend Engineer - 2022-2023
+    + Forte.io
+        - Implementation of the Interledger protocol for cross-chain transactions
+    + Aleo Blokchain
+        - Implementation of the GraphQL API for the on-chain data
 
 ### Organisations
 
@@ -55,26 +72,26 @@ Twitter:
 ### Notable contributions
 
 - Elixir language:
-  + Logger reimplementation on top of Erlang's `logger` module
-  + `mix test --cover` CLI output
-  + Support for `NO_COLOR` environment variable
-  + `is_struct/1`
-  + Fixing module inspection on case-insensitive file systems
+    + Logger reimplementation on top of Erlang's `logger` module
+    + `mix test --cover` CLI output
+    + Support for `NO_COLOR` environment variable
+    + `is_struct/1`
+    + Fixing module inspection on case-insensitive file systems
 - Erlang OTP:
-  + Support for custom devices in `logger_std_h`
-  + Fixing `socket` module to support broader set of protocols (for example
-    ICMP)
-  + Support for global metadata in `logger`
-  + Support for reconfiguration of `logger` (needed for better Mix and Rebar3
-    integration)
-  + Several fixes to `logger` and `socket` modules
+    + Support for custom devices in `logger_std_h`
+    + Fixing `socket` module to support broader set of protocols (for example
+      ICMP)
+    + Support for global metadata in `logger`
+    + Support for reconfiguration of `logger` (needed for better Mix and Rebar3
+      integration)
+    + Several fixes to `logger` and `socket` modules
 - Git:
-  + Add support for Elixir in diff
+    + Add support for Elixir in diff
 - Ecto:
-  + Support aggregations over `*`
-  + Better error on duplicated `schema` block
+    + Support aggregations over `*`
+    + Better error on duplicated `schema` block
 - Elixir MongoDB driver
-  + Support for transactions
+    + Support for transactions
 
 ### Notable projects
 
@@ -106,7 +123,7 @@ Advanced:
 
 - Rust
 - C
-- SQL (pg/SQL)
+- PostgreSQL
 - sh/Bash
 - Ruby
     + Ruby on Rails
