@@ -6,7 +6,7 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs { inherit system; };
         blog = pkgs.stdenvNoCC.mkDerivation {
           name = "hauleth-blog";
           src = ./.;
@@ -22,10 +22,6 @@
             '';
 
           dontInstall = true;
-
-          passthru = {
-            inherit (pkgs) zola;
-          };
         };
       in rec {
         packages = {
@@ -36,8 +32,10 @@
         /* defaultApp = apps.hello; */
 
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs = [
-            blog.zola
+          inputsFrom = [ blog ];
+
+          packages = [
+            pkgs.netlify-cli
             pkgs.vale
             pkgs.mdl
           ];
