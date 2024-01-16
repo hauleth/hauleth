@@ -71,3 +71,7 @@ webmention = "https://webmention.io/hauleth.dev/webmention"
 [extra.twitter]
   site = "@hauleth"
   creator = "@hauleth"
+
+[[extra.webrings]]
+  name = "Beambloggers"
+  url = "https://beambloggers.com/"

@@ -6,6 +6,7 @@
 @import 'post';
 @import 'pagination';
 @import 'footer';
+@import 'rings';
 
 :root {
   --phoneWidth: (max-width: #{$phone-max-width + 1px});

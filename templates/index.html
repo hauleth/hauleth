@@ -1,13 +1,13 @@
 {% extends "zerm/templates/index.html" %}
 
 {% block fonts %}
-{% endblock %}
+{% endblock fonts %}
 
 {% block rss %}
   {%- if config.generate_feed -%}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path=config.feed_filename) | safe}}">
   {%- endif -%}
-{% endblock %}
+{% endblock rss %}
 
 {% block og_preview %}
   {{ social::og_preview() }}
@@ -22,7 +22,7 @@
   {%- if config.extra.webmention -%}
     <link rel="webmention" href="{{ config.extra.webmention }}" >
   {%- endif -%}
-{% endblock %}
+{% endblock og_preview %}
 
 {% block copyright %}
   <div class="copyright">
@@ -67,4 +67,4 @@
       </ul>
     </nav>
   </header>
-{% endblock %}
+{% endblock header %}

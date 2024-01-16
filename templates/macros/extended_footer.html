@@ -1,0 +1,16 @@
+{% macro extended_footer() %}
+  <div class="rings">
+    <details>
+      <summary>Webrings</summary>
+      <ul>
+        {%- for ring in config.extra.webrings -%}
+        <li>
+          <a href="{{ ring.url }}/prev?referrer={{ get_url(path = "/") | safe }}">&laquo;</a>
+          <a href="{{ ring.url }}">{{ ring.name }}</a>
+          <a href="{{ ring.url }}/next?referrer={{ get_url(path = "/") | safe }}">&raquo;</a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </details>
+  </div>
+{% endmacro extended_footer %}
