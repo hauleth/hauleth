@@ -1,17 +1,5 @@
 @import "variables";
 
-@mixin menu {
-  position: absolute;
-  background: var(--background);
-  box-shadow: var(--shadow);
-  color: white;
-  border: 2px solid;
-  margin: 0;
-  padding: 10px;
-  list-style: none;
-  z-index: 99;
-}
-
 .header {
   @media print {
     display: none;
