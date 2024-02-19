@@ -5,11 +5,7 @@ title = "Here be (owned) books"
 
 [taxonomies]
 tags = [
-  "rust",
-  "programming",
-  "ownership",
-  "eli5",
-  "borrowing"
+  "rust"
 ]
 +++
 

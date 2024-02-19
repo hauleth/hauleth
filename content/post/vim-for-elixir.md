@@ -5,11 +5,8 @@ date = 2019-04-13T21:40:05+02:00
 
 [taxonomies]
 tags = [
-  "elixir",
-  "erlang",
-  "vim",
-  "neovim",
-  "programming"
+  "beam",
+  "vim"
 ]
 +++
 

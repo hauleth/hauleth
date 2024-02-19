@@ -4,8 +4,7 @@ date = 2022-01-02
 
 [taxonomies]
 tags = [
-  "elixir",
-  "programming",
+  "beam",
   "observability"
 ]
 

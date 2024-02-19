@@ -6,10 +6,7 @@ description = "How to not write benchmarks"
 [taxonomies]
 tags = [
   "beam",
-  "elixir",
-  "erlang",
-  "benchmarks",
-  "programming"
+  "performance"
 ]
 +++
 

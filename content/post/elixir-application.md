@@ -8,10 +8,7 @@ post-launch scripts."""
 
 [taxonomies]
 tags = [
-  "elixir",
-  "erlang",
-  "beam",
-  "programming"
+  "beam"
 ]
 +++
 

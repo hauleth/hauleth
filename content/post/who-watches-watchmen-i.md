@@ -12,10 +12,8 @@ applications.
 
 [taxonomies]
 tags = [
-  "elixir",
-  "programming",
-  "systemd",
-  "deployment"
+  "beam",
+  "systemd"
 ]
 +++
 

@@ -7,8 +7,7 @@ how to concieve plugin, how to go from an idea to the full fledged plugin."""
 
 [taxonomies]
 tags = [
-  "vim",
-  "viml"
+  "vim"
 ]
 +++
 

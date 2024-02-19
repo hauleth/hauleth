@@ -6,9 +6,8 @@ draft = true
 
 [taxonomies]
 tags = [
-    "elixir",
-    "testing",
-    "programming"
+    "beam",
+    "testing"
 ]
 +++
 

@@ -10,10 +10,8 @@ only when we need it to run.
 
 [taxonomies]
 tags = [
-  "elixir",
-  "programming",
-  "systemd",
-  "deployment"
+  "beam",
+  "systemd"
 ]
 
 [[extra.thanks]]

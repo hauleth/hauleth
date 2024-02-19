@@ -8,8 +8,6 @@ often forgot when working with different data."""
 
 [taxonomies]
 tags = [
-  "programming",
-  "linguistic",
   "culture"
 ]
 +++

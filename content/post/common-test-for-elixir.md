@@ -4,13 +4,8 @@ date = 2019-07-15
 
 [taxonomies]
 tags = [
- "erlang",
  "beam",
- "elixir",
- "testing",
- "programming",
- "common_test",
- "commoner"
+ "testing"
 ]
 
 [[extra.thanks]]
