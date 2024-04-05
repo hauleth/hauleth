@@ -1,8 +1,8 @@
 name: Trigger Netlify rebuild
 on:
   schedule:
-    # Run every 4h
-    - cron: '0 */4 * * *'
+    # Run every 8h
+    - cron: '0 */8 * * *'
 
 jobs:
   trigger:
