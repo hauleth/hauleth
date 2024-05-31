@@ -18,8 +18,21 @@ Twitter:
 
 ## Experience
 
-- Prograils - Junior Developer - 2013
-- Nukomeet - Full-stack Developer - 2015-2016
+- Hauleth.dev - Consultant - 2021+
+    + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
+        * Substantial query performance optimisations by optimising PostgreSQL indices
+    + Eiger - 2022-2023
+        * Forte.io
+            - Implementation of the Interledger protocol for cross-chain transactions
+        * Aleo Blokchain
+            - Implementation of the GraphQL API for the on-chain data
+    + Supabase - 2023-current
+        * Logflare - logs aggregation service
+        * Supavisor - a cloud-native, multi-tenant Postgres connection pooler
+- Remote Inc. - Senior Backend Engineer - 2020-2021
+- Kobil GmbH - Erlang/Elixir Developer - 2019-2020
+    + Maintaining MongoDB driver for Elixir
+    + Implemented transactions for MongoDB driver in Elixir
 - AppUnite - Full-stack Developer/DevOps - 2016-2019:
     + JaFolders/AlleFolders
         * 2x performance improvement by optimising PostgreSQL usage
@@ -31,18 +44,8 @@ Twitter:
         Phoenix/PostgreSQL
         * Preparing hybrid deployment with on-premise/in-cloud system
         * Migration of the existing deployments from MongoDB to PostgreSQL
-- Kobil GmbH - Erlang/Elixir Developer - 2019-2020
-    + Maintaining MongoDB driver for Elixir
-    + Implemented transactions for MongoDB driver in Elixir
-- Remote Inc. - Senior Backend Engineer - 2020-2021
-- Hauleth.dev - Consultant - 2021+
-    + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
-        * Substantial query performance optimisations by optimising PostgreSQL indices
-- Eiger - Senior Backend Engineer - 2022-2023
-    + Forte.io
-        - Implementation of the Interledger protocol for cross-chain transactions
-    + Aleo Blokchain
-        - Implementation of the GraphQL API for the on-chain data
+- Nukomeet - Full-stack Developer - 2015-2016
+- Prograils - Junior Developer - 2013
 
 ### Organisations
 
@@ -57,6 +60,7 @@ Twitter:
         * Organizer - 2015
     + UEFA Championship 2012 - Poland-Ukraine
         * ICT Accreditation support
+- Times Person of the Year - 2006
 
 ### Languages
 
@@ -78,7 +82,7 @@ Twitter:
     + `is_struct/1`
     + Fixing module inspection on case-insensitive file systems
     + Support for parsing extra arguments via `mix eval` and `eval` command in
-    release
+      release
 - Erlang OTP:
     + Support for custom devices in `logger_std_h`
     + Fixing `socket` module to support broader set of protocols (for example
@@ -112,8 +116,6 @@ Twitter:
 
 ### Languages and Frameworks
 
-Expert:
-
 - Elixir
     + Phoenix
     + Ecto
@@ -121,30 +123,19 @@ Expert:
     + OpenTelemetry collaborator
     + EEF Member
     + OTP contributor
-
-Advanced:
-
 - Rust
 - C
 - PostgreSQL
 - sh/Bash
 - Ruby
     + Ruby on Rails
-
-Fluent:
-
 - C++
 - JavaScript
 
 ### Technologies
 
-Expert:
-
 - Git
 - Vim
-
-Advanced:
-
 - HashiStack
     + Terraform
     + Consul
