@@ -3,7 +3,7 @@
 ## Personal information
 
 Email:
-  <lukasz@niemier.pl>
+  <~@hauleth.dev>
 
 Website:
   <https://hauleth.dev>
@@ -19,16 +19,16 @@ Twitter:
 ## Experience
 
 - Hauleth.dev - Consultant - 2021+
-    + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
-        * Substantial query performance optimisations by optimising PostgreSQL indices
-    + Eiger - 2022-2023
-        * Forte.io
-            - Implementation of the Interledger protocol for cross-chain transactions
-        * Aleo Blokchain
-            - Implementation of the GraphQL API for the on-chain data
     + Supabase - 2023-current
         * Logflare - logs aggregation service
         * Supavisor - a cloud-native, multi-tenant Postgres connection pooler
+    + Eiger - 2022-2023
+        * Forte.io
+            - Implementation of the Interledger protocol for cross-chain transactions
+        * Aleo Blockchain
+            - Implementation of the GraphQL API for the on-chain data
+    + Erlang Solutions/Kloeckner GmbH - 2021 - Consultant for Elixir, Ruby, and SQL (PostgreSQL)
+        * Substantial query performance optimisations by optimising PostgreSQL indices
 - Remote Inc. - Senior Backend Engineer - 2020-2021
 - Kobil GmbH - Erlang/Elixir Developer - 2019-2020
     + Maintaining MongoDB driver for Elixir
@@ -71,7 +71,8 @@ Twitter:
 
 - GitHub: <https://github.com/hauleth>
 - GitLab: <https://gitlab.com/hauleth>
-- StackOverflow: <https://stackoverflow.com/users/1017941/hauleth>
+- SourceHut: <https://sr.ht/~hauleth>
+- StackOverflow: <https://stackoverflow.com/u/1017941>
 
 ### Notable contributions
 
@@ -106,7 +107,6 @@ Twitter:
   projects
 - <https://github.com/hauleth/mix_unused> - Mix compiler for detecting unused
   code
-- Elixir's Logger implementation in 1.10+
 - <https://github.com/open-telemetry/opentelemetry-erlang> - maintainer of
   the Erlang's OpenTelemetry implementation
 - Vim plugins:
@@ -123,14 +123,12 @@ Twitter:
     + OpenTelemetry collaborator
     + EEF Member
     + OTP contributor
+- Nix/NixOS
 - Rust
-- C
 - PostgreSQL
 - sh/Bash
 - Ruby
     + Ruby on Rails
-- C++
-- JavaScript
 
 ### Technologies
 
@@ -143,11 +141,6 @@ Twitter:
 - GNU/Linux and other UNIX-like systems
 - TDD/BDD methodologies
 - Property testing
-
-Fluent:
-
-- SaltStack
-- Puppet
 
 ## Other
 
