@@ -5,7 +5,7 @@
 
 {% block rss %}
   {%- if config.generate_feed -%}
-    <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path=config.feed_filename) | safe}}">
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
   {%- endif -%}
 {% endblock rss %}
 
