@@ -16,7 +16,7 @@ tags = [
 
 [[extra.thanks]]
 name = "Nicodemus"
-why = "Helping me with my poor English"
+why = "helping me with my poor English"
 +++
 
 This is continuation of [Part I][part-i] where I described the basics of the
