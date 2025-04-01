@@ -1,7 +1,7 @@
 @import "variables";
 
 :root {
-  font-size: calc(1rem + 0.1vw);
+  font-size: calc(1rem + 0.05vw);
   line-height: 1.54;
   color: var(--color);
 
@@ -105,6 +105,7 @@ code {
   padding: 1px 6px;
   margin: 0 2px;
   font-size: .95rem;
+  hyphens: none;
 }
 
 pre {
@@ -257,6 +258,7 @@ ol {
 
     // Todo change it to ::marker when Safari will support it
     &::before {
+      margin-left: -2rem;
       content: counters(li, ".") ". ";
     }
   }

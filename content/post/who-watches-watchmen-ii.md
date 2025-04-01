@@ -185,9 +185,9 @@ Description=HTTP Socket
 Requires=sockets.target
 
 [Socket]
-# We declare the name of the file descriptor here to simplify extraction in
-# the application afterwards. By default it will be the socket name (so
-# `hello-http` in our case), but `http` is much cleaner.
+# We declare the name of the file descriptor here to simplify extraction
+# in the application afterwards. By default it will be the socket name
+# (so `hello-http` in our case), but `http` is much cleaner.
 FileDescriptorName=http
 ListenStream=80
 Service=hello.service

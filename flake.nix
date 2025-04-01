@@ -34,7 +34,7 @@
           inputsFrom = [ blog ];
 
           packages = [
-            pkgs.netlify-cli
+            # pkgs.netlify-cli
             pkgs.vale
             pkgs.mdl
           ];
