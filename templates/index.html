@@ -10,6 +10,13 @@
 {% endblock rss %}
 
 {% block og_preview %}
+  {%- if section -%}
+    <link rel="canonical" href="{{ section.permalink }}" />
+  {%- elif page -%}
+    <link rel="canonical" href="{{ page.permalink }}" />
+  {%- else -%}
+    <link rel="canonical" href="{{ current_url }}" />
+  {%- endif -%}
   {{ social::og_preview() }}
 
   {%- if config.extra.twitter.site -%}
