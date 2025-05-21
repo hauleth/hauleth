@@ -3,7 +3,7 @@
   publish = "public/"
 
   [build.environment]
-    ZOLA_VERSION = "0.20.0"
+    ZOLA_VERSION = "0.19.2"
 
 [context.deploy-preview]
   command = "zola build --drafts --base-url $DEPLOY_PRIME_URL"
@@ -52,6 +52,3 @@
 
   [plugins.inputs]
   feedPath = "atom.xml"
-
-[[plugins]]
-  package = "netlify-plugin-submit-sitemap"
