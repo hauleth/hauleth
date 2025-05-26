@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /cv/
+Disallow: /cv/ /404/ /common-test-example/
 Allow: /
 Sitemap: {{ get_url(path="sitemap.xml") }}
