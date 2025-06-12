@@ -18,10 +18,10 @@ Twitter:
 
 ## Experience
 
+- Supabase - 2023-2025
+    + Logflare - logs aggregation service
+    + Supavisor - a cloud-native, multi-tenant Postgres connection pooler
 - Hauleth.dev - Consultant - 2021+
-    + Supabase - 2023-current
-        * Logflare - logs aggregation service
-        * Supavisor - a cloud-native, multi-tenant Postgres connection pooler
     + Eiger - 2022-2023
         * Forte.io
             - Implementation of the Interledger protocol for cross-chain transactions
