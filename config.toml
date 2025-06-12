@@ -25,7 +25,7 @@ highlight_themes_css = [
 
 [extra]
 author = "Hauleth"
-for_hire = false
+for_hire = true
 theme_color = "blue"
 
 logo_text = "~hauleth"
