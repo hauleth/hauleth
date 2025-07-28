@@ -46,8 +46,8 @@ calculations. Because of the [birthday problem][], the answer isn't feasible.
 While it's technically possible to assign a unique ID to every record, doing so
 randomly introduces a high probability of collisions.
 
-- At around 30,000 generated IDs, there's already a 50% chance of a collision
-- At around 42,000, the chance of at least one duplicate reaches 99.9%
+- At around 35,000 generated IDs, there's already a 50% chance of a collision
+- At around 90,000, the chance of at least one duplicate reaches 99%
 
 So even though the math is correct, the logic fails under the randomness constraint.
 
