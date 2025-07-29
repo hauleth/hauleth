@@ -238,13 +238,13 @@ Two possible solutions for this problem are:
 
 systemd supports the second approach via [`sd_notify`][sd_notify]. The approach
 there is simple - we have `NOTIFY_SOCKET` environment variable that contain path
-to the Unix datagram socket, that we can use to send informations about state of
+to the Unix datagram socket, that we can use to send information about state of
 our application. This socket accept set of different messages, but right now,
 for our purposes, we will focus only on few of them:
 
 - `READY=1` - marks our service as ready, aka it is ready to do its work (for
   example accept incoming HTTP connections in our example). It need to be sent
-  withing given timespan after start of the VM, otherwise the process will be
+  within given timespan after start of the VM, otherwise the process will be
   killed and possibly restarted
 - `STATUS=name` - sets status of our application that can be checked via
   `systemctl status hello.service`, this allows us to have better insight into

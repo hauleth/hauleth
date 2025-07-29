@@ -308,7 +308,7 @@ Logger.error(
 )
 ```
 
-As we can see there, the report contains informations like:
+As we can see there, the report contains information like:
 
 - `:label` - that describes type of the event
 - `:report` - content of the "main" event
