@@ -24,6 +24,14 @@
         };
       in
       {
+        apps.publish = let
+          program = pkgs.writeShellScript "publish" ''
+            cp -r ${self.packages.${system}.blog} public
+            '';
+        in {
+          type = "app";
+          program = "${program}";
+        };
         packages = {
           inherit blog;
         };
