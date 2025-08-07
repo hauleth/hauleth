@@ -13,12 +13,11 @@
 
           nativeBuildInputs = [
             pkgs.zola
-            pkgs.gitMinimal
           ];
 
           buildPhase = ''
-            git submodule update --init --recursive --depth=1
-            zola build -o $out
+            zola --version
+            zola build --output-dir $out
           '';
 
           dontInstall = true;
