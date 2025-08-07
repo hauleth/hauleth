@@ -1,0 +1,8 @@
+*
+  Permission-Policy: interest-cohort=()
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Clacks-Ooverhead: GNU Terry Pratchet
+  Content-Security-Policy: default-src 'self'; script-src 'self'; connect-src 'self'; img-src https:
+  Permissions-Policy: accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), gamepad=(), speaker-selection=()
+  Referrer-Policy: no-referrer-when-downgrade
