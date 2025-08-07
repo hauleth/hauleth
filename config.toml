@@ -28,6 +28,8 @@ author = "Hauleth"
 for_hire = true
 theme_color = "blue"
 
+source = "https://tangled.sh/hauleth.dev/blog"
+
 logo_text = "~hauleth"
 logo_home_link = "/"
 
