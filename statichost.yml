@@ -1,0 +1,9 @@
+image: ghcr.io/getzola/zola:v0.21.0
+command: build
+public: public
+image_entrypoint: true
+
+# TODO: Usa nix there
+# image: ghcr.io/lix-project/lix:latest
+# command: nix --extra-experimental-features nix-command --extra-experimental-features flakes run .#publish
+# public: public
