@@ -1,9 +1,10 @@
 @import "variables";
 
 .post {
+  position: relative;
   width: 100%;
   text-align: justify;
-  text-wrap: pretty;
+  text-wrap: stable;
   hyphens: auto;
   hyphenate-limit-chars: 10;
   margin: 20px auto;
@@ -175,9 +176,9 @@
 .footnote-definition {
   @media (min-width: #{$tablet-max-width + 1px}) {
     position: absolute;
-    left: 105%;
+    right: calc(-12vw - 3em);
 
-    width: 10vw;
+    width: 12vw;
 
     margin-top: -7rem;
   }
