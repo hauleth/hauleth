@@ -380,9 +380,9 @@ Erlang/OTP 25 [erts-13.2.2.1] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-thr
 Elixir 1.14.5 (compiled with Erlang/OTP 25)
 ```
 
-> Note no JIT as Nix on macOS currently[^currently] disable it and I didn't bother to enable
-> it in the derivation (it was disabled because there were some issues, but IIRC
-> these are resolved now).
+> Note no JIT as Nix on macOS currently[^currently] disable it and I didn't
+> bother to enable it in the derivation (it was disabled because there were some
+> issues, but IIRC these are resolved now).
 
 [^currently]: Nixpkgs rev `bc3ec5ea`
 

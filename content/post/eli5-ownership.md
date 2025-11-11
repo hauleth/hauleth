@@ -36,9 +36,10 @@ Each note, no matter what size it is, can have one owner. Me, you, anyone, it
 doesn't matter, but there will be only one owner. You can do whatever you want
 with such note but with that power comes, not so great, responsibility: after
 you are done with this book you will need to get rid of it. Since you are a law
-abiding citizen you will recycle the note in the appropriate receptacle, but it is your
-responsibility to do it. Of course this is not the only way to deal with a note. You
-can also give it to someone and then it will be hers or his responsibility.
+abiding citizen you will recycle the note in the appropriate receptacle, but it
+is your responsibility to do it. Of course this is not the only way to deal with
+a note. You can also give it to someone and then it will be hers or his
+responsibility.
 
 To rephrase it in the Rust way, it would look like this:
 
@@ -140,8 +141,8 @@ fn friend(work: &Homework) { // we lend it immutably
 
 But some notes are even shorter than that. They are so short and easy to clone
 that it is much easier to clone them every time, instead of explicitly
-calling the method. Like when you give your phone number to a hot girl at the 
-bar, the `Copy` trait automatically clones your note so the other has their own copy. 
+calling the method. Like when you give your phone number to a hot girl at the
+bar, the `Copy` trait automatically clones your note so the other has their own copy.
 Again, this is for small types that can be mechanically copied each time when needed.
 
 ```rust

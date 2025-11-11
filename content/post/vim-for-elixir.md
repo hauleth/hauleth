@@ -319,7 +319,6 @@ is (also not that this is particularly troublesome for anyone who is aware of
 Google to find it). Instead I highly suggest You to dig into your own
 configuration and for each line ask yourself:
 
-
 - Do I know what this line **does**?
 - Do I really **need** this line?
 
