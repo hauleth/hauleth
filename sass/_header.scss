@@ -1,9 +1,7 @@
 @import "variables";
 
 .header {
-  @media print {
-    display: none;
-  }
+  @media print { display: none; }
 
   display: flex;
   flex-direction: column;

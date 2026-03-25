@@ -4,12 +4,6 @@
   font-size: calc(1rem + 0.05vw);
   line-height: 1.54;
   color: var(--color);
-
-  @media print {
-    color: #000;
-    line-height: 1.2;
-    font-size: 10pt;
-  }
 }
 
 html {
@@ -72,13 +66,28 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 h4, h5, h6 {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+  color: var(--accent);
+
+  &:has(+ p > small) {
+    margin-bottom: .5rem;
+  }
+
+  & + p:has(> small) {
+    margin-top: 0;
+  }
+
+  & + p > small {
+    color: var(--accent-alpha-70);
+  }
+}
 
 a {
   color: inherit;
@@ -179,7 +188,6 @@ blockquote {
 }
 
 table {
-  table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
   margin: 40px 0;
@@ -191,6 +199,7 @@ table, th, td {
 }
 
 th {
+  font-size: .9rem;
   color: var(--accent);
 }
 
