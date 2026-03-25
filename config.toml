@@ -15,13 +15,9 @@ taxonomies = [
   {name = "tags", feed = true},
 ]
 
-[markdown]
-highlight_code = true
-highlight_theme = "css"
-# TODO: Write custom theme that will fit the overall colouring better
-highlight_themes_css = [
-  { theme = "nord", filename = "syntax-theme.css" },
-]
+[markdown.highlighting]
+style = "class"
+theme = "nord"
 
 [extra]
 author = "Hauleth"
