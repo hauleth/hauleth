@@ -1,5 +1,5 @@
 *
-  Permission-Policy: interest-cohort=()
+  Permissions-Policy: interest-cohort=()
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Clacks-Overhead: GNU Terry Pratchet

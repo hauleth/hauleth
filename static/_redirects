@@ -1,3 +1,5 @@
 /js/script.js https://plausible.io/js/script.js 200
 /api/event https://plausible.io/api/event 200
+
 /.well-known/webfinger https://fosstodon.org/.well-known/webfinger?resource=acct:hauleth@fosstodon.org 200
+/.well-known/autoconfig/mail/config-v1.1.xml https://autoconfig.hauleth.dev/mail/config-v1.1.xml 200
