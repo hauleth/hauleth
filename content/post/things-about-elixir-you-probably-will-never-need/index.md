@@ -111,7 +111,7 @@ slowdown. Two possible solutions there are:
    you use that metric to charge your users.
 1. Gather that data less often.
 
-The approach I have taken there is obviously 1., and the solution is dumb
+The approach I have taken there is obviously 2., and the solution is dumb
 simple - debouncer.
 
 Debouncing is an interesting technique often used in user interfaces where you
