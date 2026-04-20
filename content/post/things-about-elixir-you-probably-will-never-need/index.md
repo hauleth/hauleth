@@ -15,6 +15,10 @@ tags = [
     "beam",
     "performance"
 ]
+
+[[extra.thanks]]
+name = "Angry Clippy (@ze.du on Discord)"
+why = "Redaction"
 +++
 
 In my last larger gig I worked on fascinating project - [Postgres connection
@@ -37,6 +41,8 @@ side of the project I could focus purely on squeezing as much of performance as
 I can. This project now lives as [Ultravisor][] - it is still nowhere near being
 done in a way that I like, but I still go back to work on it from time to time
 to find potential performance improvements.
+
+[Ultravisor]: https://github.com/Ultravisor/ultravisor
 
 This is a story of things that I have done and learned during that journey.
 
@@ -74,6 +80,8 @@ fixed by simply listening for count of calls to `handle_event/4` function given
 times and then running `cat *.bggg` to concatenate all files into larger trace.
 That has disadvantages, but at least it was workable within [Speedoscope][]
 which I also highly recommend to anyone who needs to work on such optimisation.
+
+[Speedoscope]: https://speedoscope.app
 
 While flame graphs are awesome, there is cost to gathering them with eFlambè -
 it greatly affects performance. Fortunately Erlang has some built in tools that
@@ -171,7 +179,7 @@ case.
 [Telemetry]: https://github.com/beam-telemetry/telemetry
 
 In this project the metrics are exposed in Prometheus/OpenMetrics format, which
-mean that there need to be collection system within application. In BEAM
+means that there needs to be collection system within the application. In BEAM
 applications the standard way to implement that is to use ETS tables to store
 recorded values. Fortunately there are libraries to handle that for you, and for
 the longest time "gold standard" for it was `telemetry_prometheus_core` library
@@ -285,9 +293,9 @@ you have some data that will probably never change and will be requested
 
 ## Lesson: Calling your `GenServer`s is fast, but not 90k times per second fast
 
-One of the interesting observations is that I have spotted is that if there are
-longer running queries, one that send more data over the network than just
-simple short response, then the difference between Ultravisor and "state of the
+One of the interesting observations that I have spotted is that if there are
+longer running queries, ones that send more data over the network than just
+simple short responses, then the difference between Ultravisor and "state of the
 art" tools like [PgBouncer][] or [PgDog][] (that are written in non-managed
 languages like C and Rust) is much smaller (obviously it is still there, but it
 is on par, not substantially off).
