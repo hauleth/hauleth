@@ -20,7 +20,7 @@
             {%- endif -%}
         </span>
         ::
-        <time datetime="P{{ page.reading_time }}M">{{ page.reading_time }} min</time>
+        <time datetime="PT{{ page.reading_time }}M">{{ page.reading_time }} min</time>
 
         {{ posts::taxonomies(taxonomy=page.taxonomies,
            disp_cat=config.extra.show_categories,
