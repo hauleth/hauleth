@@ -40,16 +40,16 @@ when no longer needed. It is simple in Vim:
 
 Unfortunately this has bunch of problems:
 
-- if we forgot to close that buffer, then it will hang there indefinitely,
+- If we forgot to close that buffer, then it will hang there indefinitely,
 - running `:bd!` in the wrong buffer, can have unpleasant consequences,
-- this buffer is still listed in `:ls`, which is unneeded (as it is only
+- This buffer is still listed in `:ls`, which is unneeded (as it is only
   temporary).
 
 ## Systematic solution in Vim
 
 Fortunately Vim has solutions for all of our problems:
 
-- the "scratch" section in [`:h special-buffers`][h-special-buffers], which
+- The "scratch" section in [`:h special-buffers`][h-special-buffers], which
   solves the first two problems,
 - [`:h unlisted-buffer`][h-unlisted-buffer], which solves the third problem.
 
@@ -62,7 +62,7 @@ So now our solution looks like:
 :bd
 ```
 
-However that is a long chain of commands to write. Of course we could condense
+However, that is a long chain of commands to write. Of course we could condense
 the first two into a single one:
 
 ```vim
@@ -145,13 +145,14 @@ command! -nargs=1 -complete=command Scratch call <SID>scratch('<mods>', <q-args>
 
 The main differences are:
 
-- special case for empty command, it will just open an empty buffer,
-- use of `is#` instead of `==`,
-- use of `:h execute()` instead of `:redir`.
+- Special case for empty command, it will just open an empty buffer,
+- Use of `is#` instead of `==`,
+- Use of `:h execute()` instead of `:redir`.
 
 As it is quite self-contained and (let's be honest) too specific for `$MYVIMRC`
-we can can extract it to its own location in `plugin/scratch.vim`, but to do so properly we need
-one additional thing, a command to prevent the script from being loaded twice:
+we can extract it to its own location in `plugin/scratch.vim`. To do so properly
+we need one additional thing, a command to prevent the script from being loaded
+twice:
 
 ```vim
 if exists('g:loaded_scratch')
@@ -243,9 +244,9 @@ I didn't need anything more, so take your time.
 
 Additional pro-tips:
 
-- make it small, big plugins will require a lot of maintenance, small plugins
+- Make it small, big plugins will require a lot of maintenance, small plugins
   are much simpler to maintain,
-- if something can be done via a command then it should be made as a command,
+- If something can be done via a command then it should be made as a command,
   do not force your mappings on users.
 
 [scratch]: https://github.com/hauleth/vim-backscratch

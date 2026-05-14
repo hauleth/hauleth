@@ -28,21 +28,21 @@ If you are wondering about the presentation, [the slides are on SpeakerDeck][sli
 ## Abstract
 
 Most of the operating systems are multi-process and multi-user operating
-systems. This has a lot of positive aspects, like to be able to do more than one
+systems. This has a lot of positive aspects. Like to be able to do more than one
 thing at the time at our devices, but it introduces a lot of complexities that
 in most cases are hidden from the users and developers. These things still need
 to be handled in one or another way. The most basic problems are:
 
-- some processes need to be started before user can interact with the OS
+- Some processes need to be started before user can interact with the OS
   in meaningful (for them) way (for example mounting filesystems, logging,
   etc.)
-- some processes require strict startup ordering, for example you may need
+- Some processes require strict startup ordering, for example you may need
   logging to be started before starting HTTP server
-- system operator somehow need to know when the process is ready to do their
+- System operator somehow need to know when the process is ready to do their
   work, which is often some time after process start
-- system operator should be able to check process state in case when debugging
+- System operator should be able to check process state in case when debugging
   is needed, most commonly via logs
-- shutdown of the processes should be handled in a way, that will allow other
+- Shutdown of the processes should be handled in a way, that will allow other
   processes to be shut down cleanly (for example application that uses DB should
   be down before DB itself)
 
@@ -81,7 +81,7 @@ daemons".
 
 Each of the solutions mentioned above has its strong and weak points. I do not
 want to start another flame war whether it is good or not. It has some good in
-it, and it has some bad in it, but we can say that it "won" over the most used
+it, and it has some bad in it. We can say that it "won" over the most used
 distributions, and despite our love or hate towards it, we need to learn how to
 live with that.
 
@@ -89,11 +89,11 @@ live with that.
 
 ## Why `systemd`?
 
-`systemd` became a thing because SysV approach to ordering services' startup was
+`systemd` became a thing because SysV approach to ordering services' start-up was
 mildly irritating and non-parallelizable. In short, SysV is starting processes
 exactly in lexicographical order of files in given directory. This meant, that
 even if your service didn't need the DB at all, but it somehow ended further in
-the directory listing, you ended in waiting for the DB startup. Additionally,
+the directory listing, you ended in waiting for the DB start-up. Additionally,
 SysV wasn't really monitoring services, it just assumed that when process forked
 itself to the background, then it is "done" with the startup, and we can
 continue. This is obviously not true in many cases, for example, if your
@@ -123,7 +123,7 @@ older counterparts, you will just lose all the features these bring with them.
 ---
 
 Such lazy approach sometimes require changes into the service itself. For
-example to let supervisor know, that you are ready (not just started), you need
+example, to let supervisor know, that you are ready (not just started), you need
 some way to communicate with supervisor. In `systemd` you can do so via UNIX
 socket pointed by `NOTIFY_SOCKET` environment variable passed to your
 application. With the same socket you can implement another useful feature
@@ -260,11 +260,11 @@ for our purposes, we will focus only on few of them:
   will be forcefully killed
 
 These messages provide us enough power to not only mark the service as ready,
-but also provides additional information about system state, so even operator,
+but also provides additional information about system state. So even operator,
 who knows a little about Erlang or our application runtime, will be able to
 understand what is going on.
 
-The main thing is that systemd will wait with activation of the dependants of
+The main thing is that systemd will wait with activation of the dependents of
 our system as well as the `systemctl start` and `systemctl restart` commands
 will wait until our service declare that it is ready.
 
@@ -282,7 +282,7 @@ ExecStart=/opt/hello/bin/hello start
 WatchdogSec=1min
 ```
 
-And then in our supervisor tree we need add `:systemd.ready()` **after** last
+And then in our supervisor tree we need to add `:systemd.ready()` **after** last
 process needed for proper functioning of our application, in our simple example
 it is after `Plug.Cowboy`:
 
@@ -408,14 +408,14 @@ minute interval, then the service will be marked as malfunctioning. From the
 application side we can manage state of the watchdog in several ways:
 
 - By setting `systemd.watchdog_check` configuration option we can configure the
-  function that will be called on each check, if that function return `true`
+  function that will be called on each check. If that function return `true`
   then it mean that application is healthy and the systemd should be notified
   with ping, if it returns `false` or fail, then the check will be omitted.
 - Manually sending trigger message in case of detected problems via
   `:systemd.watchdog(trigger)`, it will immediately mark service as
   malfunctioning and will trigger action defined in service unit file (by
   default it will restart application)
-- Disabling built in watchdog process via `:systemd.watchdog(:disable)` and then
+- Disabling built-in watchdog process via `:systemd.watchdog(:disable)` and then
   manually sending `:systemd.watchdog(:ping)` within expected intervals
   (discouraged)
 
@@ -467,11 +467,11 @@ Environment=ERL_CRASH_DUMP_SECONDS=0
 ```
 
 The problem with that configuration is that our service is now capable on
-binding **any** port under 1024, so for example, if there is some security
-issue, then the malicious party can open any of the restricted ports and then
-serve whatever data they want there. This can be quite problematic, and the
-solution for that problem will be covered in Part 2, where we will cover socket
-passing and socket activation for our service.
+binding **any** port under 1024. For example, if there is some security issue,
+then the malicious party can open any of the restricted ports and then serve
+whatever data they want there. This can be quite problematic, and the solution
+for that problem will be covered in Part 2, where we will cover socket passing
+and socket activation for our service.
 
 With that we achieved quite basic level of isolation to what Docker (or other
 container runtime) is providing, but it do not require `overlayfs` or anything
@@ -485,11 +485,11 @@ the hardening of the services. More information can be found in [RedHat
 article][rh-systemd-hardening] and in [`systemd-analyze security` command
 output][systemd-analyze-security]. Possible features are:
 
-- creation of the private networks for your services
-- disallowing creation of socket connections that are outside of the specified
+- Creation of the private networks for your services
+- Disallowing creation of socket connections that are outside of the specified
   set of families
-- make only some paths readable
-- hide some paths from the process
+- Make only some paths readable
+- Hide some paths from the process
 - etc.
 
 Coverage of just that topic is a little bit out of scope for this blog post, so

@@ -90,7 +90,7 @@ Unfortunately not all of the highly useful keys are used/known in the community.
 
 ## Application environment
 
-For some reason everyone calls it configuration, so if you are familiar with
+For some reason everyone calls it configuration. If you are familiar with
 `config/config.exs` and for some reason you decided to go [against the *Library
 Guidelines*](guidelines) and you have decided to use application environment for
 configuring your code (there are reason to do so, even when you publish your
@@ -102,7 +102,7 @@ in it's dependants. You have 2 possibilities how to solve that:
 - Use `:env` to set data that should be loaded to application environment by
   default.
 
-Be wary that the second option works only  for current application, so you
+Be wary that the second option works only for current application, so you
 cannot configure other applications (for example `logger`) there. *But what is
 the point?* You may ask, and I found one. If you want to use default
 `sys.config` file for configuring your application then sometimes few pointless
@@ -124,7 +124,7 @@ this is pure win for me.
 ## Start phases
 
 Application configuration also allows you to define additional pieces of code to
-be run after your application started. For example imagine situation when you
+be run after your application started. For example, imagine situation when you
 want to send Slack notification that given node started and is ready to work.
 You can do it via temporary task in `Supervisor.init/2` by defining child list
 like:
@@ -137,7 +137,7 @@ like:
 ]
 ```
 
-Alternatively you can use `:start_phases` in `application/0`:
+Alternatively, you can use `:start_phases` in `application/0`:
 
 ```elixir
 start_phases: [
@@ -158,7 +158,7 @@ same as in [`Application.start/2` callback](https://hexdocs.pm/elixir/Applicatio
 and 3rd is the value passed in `:start_phases`.
 
 The awesome part there is that `start_phase/3` is called not only for current
-application, but all of it's dependencies as well.
+application, but all of its dependencies as well.
 
 ## Registered names
 
@@ -174,7 +174,7 @@ registered: [Logger, Logger.BackendSupervisor, Logger.Supervisor, Logger.Watcher
 ```
 
 Unfortunately Phoenix do not use this field itself and do not suggest using one
-in it's default project generator. But in general it's good practise.
+in its default project generator. But in general it's good practise.
 
 ## Summary
 

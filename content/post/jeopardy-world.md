@@ -27,7 +27,7 @@ often use is this simple question posed to an AI:
 > case letters (with exception to 0, O, 1, I, and L) is enough to randomly
 > assign unique identification numbers for 10 million records?
 
-You can see for your self answer from ChatGPT [there][chatgpt].
+You can see for yourself answer from ChatGPT [there][chatgpt].
 
 At first glance, the answer looks valid and sensible. The math checks out. It
 calculates the number of available combinations correctly. Everything seems

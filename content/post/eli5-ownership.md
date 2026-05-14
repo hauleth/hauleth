@@ -23,9 +23,9 @@ application of real world relationships. For example, imagine types in Rust as
 a kind of written note. We have different types of notes and based on that, each
 of them will be handled differently.
 
-- short ones, like phone no. of the hot waiter/waitress
-- longer ones, like this article
-- longest ones, like a *Lord of the Rings*
+- Short ones, like phone no. of the hot waiter/waitress
+- Longer ones, like this article
+- Longest ones, like a *Lord of the Rings*
 
 Using this analogy let me try to introduce you, dear reader, to the amazing
 world of Rust's ownership.
@@ -84,7 +84,7 @@ with the same rules that were applied to us.
 
 Rust also ensures that **mutable borrow** is unique. There will never be more
 than one person that will be allowed to edit the book. We can still create a chain
-of trust - like when I find someone who is better at English than me, I would
+of trust. Like when I find someone who is better at English than me, I would
 allow this person to correct an article written by me or my friend who has
 entrusted me with correcting his text.
 
@@ -117,7 +117,7 @@ fn reader(book: &Note) {
 ## Not all notes are worth borrowing
 
 Sometimes this whole process of lending and then receiving a note back is much
-more complicated then just cloning the whole note for someone else. Imagine that
+more complicated than just cloning the whole note for someone else. Imagine that
 you are in school and friend wants to copy your homework. What you do is lend
 your homework to him, and with caution he can clone it on his own. This is what
 Rust's `Clone` trait provides - a method to clone content of struct without moving

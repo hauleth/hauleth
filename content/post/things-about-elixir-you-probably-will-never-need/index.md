@@ -36,7 +36,7 @@ that was my task - to find potential improvements that can be made to make this
 codebase be much faster.
 
 After departing from Supabase I liked the project so much (mostly as learning
-ground) that I have created my own fork, where unrestrained from all business
+ground) that I have created my own fork. There, unrestrained from all business
 side of the project I could focus purely on squeezing as much of performance as
 I can. This project now lives as [Ultravisor][] - it is still nowhere near being
 done in a way that I like, but I still go back to work on it from time to time
@@ -46,7 +46,7 @@ to find potential performance improvements.
 
 This is a story of things that I have done and learned during that journey.
 
-> **Beware**: It is a retrospection, so in some places my memory may be not the
+> **Beware**: It is retrospection, so in some places my memory may be not the
 > best.
 
 Here I need to provide some explanation first, about how Ultravisor works with
@@ -59,7 +59,7 @@ database connections. It provides 2 modes of operation:
   the Ultravisor and can keep that connection indefinitely without ever
   bothering database. Database connection is checked out *only* when there is
   some request from user and is returned to the pool as soon as that result of
-  that query is returned and DB is ready for next one.
+  that query is returned and database is ready for next one.
 
 While `session` mode is quite on par with other implementations of connection
 pooling for Postgres, `transaction` mode is where performance is lacking and is
@@ -84,13 +84,13 @@ which I also highly recommend to anyone who needs to work on such optimisation.
 [Speedoscope]: https://speedoscope.app
 
 While flame graphs are awesome, there is cost to gathering them with eFlambè -
-it greatly affects performance. Fortunately Erlang has some built in tools that
+it greatly affects performance. Fortunately Erlang has some built-in tools that
 have lesser performance impact, and the "most modern" of these is
 [`tprof`][tprof]. This tool is pretty easy to use, but is less detailed than
 eFlambè. But even with that limitation, it provides superb insight into stuff
-that has greatest impact on performance, as well as it make it easier to work on
-long running processes, as it work asynchronously, so you can "manually" decide
-how long you want to trace your process.
+that has greatest impact on performance. It make it easier to work on long
+running processes, as it work asynchronously, so you can "manually" decide how
+long you want to trace your process.
 
 [Stratus3D]: https://github.com/Stratus3D
 [eflambe]: https://github.com/Stratus3D/eflambe
@@ -120,7 +120,7 @@ reason for that is that our interfaces may have flaws that send repeated events
 one after another.
 
 In this case Ultravisor tries to store amount of sent data after each query, but
-that can get expensive for many short queries. Instead I have implemented simple
+that can get expensive for many short queries. Instead, I have implemented simple
 per-process debouncer:
 
 ```elixir
@@ -179,16 +179,16 @@ case.
 [Telemetry]: https://github.com/beam-telemetry/telemetry
 
 In this project the metrics are exposed in Prometheus/OpenMetrics format, which
-means that there needs to be collection system within the application. In BEAM
+means that there need to be collection system within the application. In BEAM
 applications the standard way to implement that is to use ETS tables to store
 recorded values. Fortunately there are libraries to handle that for you, and for
 the longest time "gold standard" for it was `telemetry_prometheus_core` library
 created by Telemetry core team.
 
 While for most projects that library is performant enough (because metrics
-aren't recorded in quite tight loops), in case of this project that was not a
-case. There, metrics gathering is still one of the hottest spot in the codebase,
-even with all improvements that have been done.
+aren't recorded in tight loops), in case of this project that was not a case.
+There, metrics gathering is still one of the hottest spots in the codebase, even
+with all improvements that have been done.
 
 Excerpt from `tprof` profile:
 
@@ -258,10 +258,10 @@ the process that tries to retrieve data.
 
 Fortunately Erlang supports another mechanism for storing globally accessible
 data - `persistent_term`. Of course, there is no such thing as "free lunch" so
-it has substantial disadvantage - it works poorly[^pt] with data that changes
+it has substantial disadvantage. It works poorly[^pt] with data that changes
 often, as removing or changing data in a key will require walk through all
 processes to copy data from it to processes that may use it into process memory.
-However - Telemetry handlers should not change a lot, you should just set them
+However, Telemetry handlers should not change a lot, you should just set them
 once as soon as your system start, and then ideally they will not change ever
 again.
 
@@ -281,11 +281,11 @@ tps = 78479.006634 (without initial connection time)
 
 [^lower-tps]: If you wonder why these results are lower than in previous
     section, it is because test conditions are identical only per section, not
-    cross sections. In this particular case I have ran benchmark while
+    cross sections. In this particular case I have run benchmark while
     collecting metrics (to show difference in `persistent_term` change) while
-    other are ran without metrics to not pollute results.
+    other are run without metrics to not pollute results.
 
-**Summary:** `persistent_term` is awesome and super fast, so if you know that
+**Summary:** `persistent_term` is awesome and superfast, so if you know that
 you have some data that will probably never change and will be requested
 *constantly*, then it may be good place to store that data.
 
@@ -294,11 +294,11 @@ you have some data that will probably never change and will be requested
 ## Lesson: Calling your `GenServer`s is fast, but not 90k times per second fast
 
 One of the interesting observations that I have spotted is that if there are
-longer running queries, ones that send more data over the network than just
+longer running queries. Ones that send more data over the network than just
 simple short responses, then the difference between Ultravisor and "state of the
-art" tools like [PgBouncer][] or [PgDog][] (that are written in non-managed
-languages like C and Rust) is much smaller (obviously it is still there, but it
-is on par, not substantially off).
+art" tools like [PgBouncer][] or [PgDog][] (written in non-managed languages
+like C and Rust) is much smaller. Obviously it is still there, but it is on par,
+not substantially off.
 
 [PgBouncer]: https://www.pgbouncer.org
 [PgDog]: https://pgdog.dev
@@ -308,16 +308,16 @@ reason was found in place where I least expected it - checking out database
 connection to be used.
 
 Flame graph showed that almost third of the time is spent on checking out
-database connections, and most of that time is spent in 2 function calls, both
+database connections. Most of that time is spent in 2 function calls, both
 of them are internally `gen_statem` calls and in both most time is spent on
 sleeping (aka, waiting for reply).
 
 ![Image showing left-heavy flamegraph of the profiled application](sleep.png)
 
-Now, this one is hard thing to optimise, as in Elixir there is no mutability
+Now, this is hard thing to optimise, as in Elixir there is no mutability
 (almost, we will get there). This mean that if I want some form of shared queue
-of processes, then I need to use separate process to keep state of the queue
-for us, and then do `GenServer` calls to fetch that state. What I did in such
+of processes, then I need to use separate process to keep state of the queue for
+us, and then do `GenServer` calls to fetch that state. What I did in such
 situation? What any unreasonable Elixir developer obsessed with performance
 would do - NIF[^ets].
 
@@ -377,7 +377,7 @@ need to decipher what have already been changed and/or removed from the profile.
 
 Additional feature that I heavily used there is "anonymous branching". As when
 working with JJ I do not need to create new name for each branch that I want to
-try, it was way easier to implement one idea, then just do `jj new @-` (which
+try. It was way easier to implement one idea, then just do `jj new @-` (which
 branches off at the commit that is parent of the current one) and just implement
 alternative idea. I used that constantly to compare ideas and reject failed
 concepts.

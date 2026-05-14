@@ -36,10 +36,10 @@ For 1 million processes this code reported 3.94 GiB of memory used by the proces
 in Piotr's benchmark, but with little work I managed to reduce it about 4 times
 to around 0.93 GiB of RAM usage. In this article I will describe:
 
-- how I did that
-- why the original code was consuming so much memory
-- why in the real world you probably should not optimise like I did here
-- why using ChatGPT to write benchmarking code sucks (TL;DR because that will
+- How I did that
+- Why the original code was consuming so much memory
+- Why in the real world you probably should not optimise like I did here
+- Why using ChatGPT to write benchmarking code sucks (TL;DR because that will
   nerd snipe people like me)
 
 ## What are Erlang processes?
@@ -48,10 +48,10 @@ Erlang is ~~well~~ known of being language which support for concurrency is
 superb, and Erlang processes are the main reason for that. But what are these?
 
 In Erlang *process* is the common name for what other languages call *virtual
-threads* or *green threads*, but in Erlang these have small neat twist - each of
-the process is isolated from the rest and these processes can communicate only
-via message passing. That gives Erlang processes 2 features that are rarely
-spotted in other implementations:
+threads* or *green threads*. These have small neat twist - each of the process
+is isolated from the rest and these processes can communicate only via message
+passing. That gives Erlang processes 2 features that are rarely spotted in other
+implementations:
 
 - Failure isolation - bug, unhandled case, or other issue in single process will
   not directly affect any other process in the system. VM can send some messages
@@ -85,7 +85,7 @@ data that it store are:
 Different processes abstractions (like `gen_server`/`GenServer`, Elixir's
 `Task`, etc.) can store even more metadata there, `logger` store process
 metadata in process dictionary, `rand` store state of the PRNGs in the process
-dictionary. it's used quite extensively by some OTP features.
+dictionary. It is used quite extensively by some OTP features.
 
 ### "Well behaved" OTP process
 
@@ -111,7 +111,7 @@ it reduce the feasibility of such benchmark.
 If we want to avoid that additional memory overhead in our spawned processes we
 need to go back to more primitive functions in Erlang, namely `erlang:spawn/1`
 (`Kernel.spawn/1` in Elixir). But that mean that we cannot use
-`Task.await_many/2` anymore, so we need to workaround it by using custom
+`Task.await_many/2` anymore, so we need to work around it by using custom
 function:
 
 ```elixir
@@ -155,22 +155,22 @@ sequence types:
 
 - Tuples - which are non-growable product type of the values, so you can access
   any field quite fast, but adding more values is performance no-no
-- (Singly) linked lists - growable type (in most case it will have single type
-  values in it, but in Erlang that is not always the case), which is fast to
+- (Singly) linked lists - growable type. In most case it will have single type
+  values in it, but in Erlang that is not always the case. It is fast to
   prepend or pop data from the beginning, but do not try to do anything else if
   you care about performance.
 
-In this case we will focus on the 2nd one, as there tuples aren't important at
+In this case we will focus on the 2nd one, as these tuples aren't important at
 all.
 
 Singly linked list is simple data structure. It's either special value `[]`
 (an empty list) or it's something called "cons-cell". Cons-cells are also
-simple structures - it's 2ary tuple (tuple with 2 elements) where first value
+simple structures - it's 2-ary tuple (tuple with 2 elements) where first value
 is head - the value in the list cell, and another one is the "tail" of the list (aka
 rest of the list). In Elixir the cons-cell is denoted like that `[head | tail]`.
 Super simple structure as you can see, and perfect for the functional
 programming as you can add new values to the list without modifying existing
-values, so you can be immutable and fast. However if you need to construct the
+values, so you can be immutable and fast. However, if you need to construct the
 sequence of a lot of values (like our list of all tasks) then we have problem.
 Because Elixir promises that list returned from the `for` will be **in-order**
 of the values passed to it. That mean that we either need to process our data
@@ -198,13 +198,13 @@ def map([head | tail], func, agg) do
 end
 ```
 
-Which one of these approaches is more performant is irrelevant[^erlang-perf],
-what is relevant is that we need either build call stack or construct our list
-*twice* to be able to conform to the Elixir promises (even if in this case we do
-not care about order of the list returned by the `for`).
+Which one of these approaches is more performant is irrelevant[^erlang-perf].
+What is relevant is that we need either build call stack or construct our list
+*twice* to be able to conform to the Elixir promises. Even if in this case we do
+not care about order of the list returned by the `for`.
 
 [^erlang-perf]: Sometimes body recursion will be faster, sometimes TCO will be
-faster. it's impossible to tell without more benchmarking. For more info check
+faster. It is impossible to tell without more benchmarking. For more info check
 out [superb article by Ferd Herbert](https://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html).
 
 Of course we could mitigate our problem by using `Enum.reduce/3` function (or
@@ -240,8 +240,8 @@ Bench.await_many(tasks)
 Even then we build list of all PIDs.
 
 Here I can also go back to the "second problem* I have mentioned above.
-`Task.await_many/1` *also construct a list*. it's list of return value from all
-the processes in the list, so not only we constructed list for the tasks' PIDs,
+`Task.await_many/1` *also construct a list*. It is list of return value from all
+the processes in the list. So not only we constructed list for the tasks' PIDs,
 we also constructed list of return values (which will be `:ok` for all processes
 as it's what `:timer.sleep/1` returns), and immediately discarded all of that.
 
@@ -289,7 +289,7 @@ You see, we need to pass `this` (which is PID of the parent) to our newly
 spawned process. That is suboptimal, as we are looking for the way to reduce
 amount of the memory (and ignore all other metrics at the same time). As Erlang
 processes are meant to be "share nothing" type of processes there is problem -
-we need to copy that PID to all processes. it's just 1 word (which mean 8 bytes
+we need to copy that PID to all processes. It is just 1 word (which mean 8 bytes
 on 64-bit architectures, 4 bytes on 32-bit), but hey, we are microbenchmarking,
 so we cut whatever we can (with 1M processes, this adds up to 8 MiBs).
 
@@ -334,11 +334,11 @@ our messages to respective processes.
 ## One more thing
 
 As you may have already noticed we are passing lambda to the `spawn/1`. That is
-also quite suboptimal, because of [difference between remote and local call][remote-vs-local].
-This mean that we are paying slight memory cost for these processes to keep the
-old module in memory. Instead we can use either fully qualified function capture
-or `spawn/3` function that accepts MFA (module, function name, arguments list)
-argument. We end with:
+also suboptimal, because of [difference between remote and local
+call][remote-vs-local]. This mean that we are paying slight memory cost for
+these processes to keep the old module in memory. Instead, we can use either
+fully qualified function capture or `spawn/3` function that accepts MFA (module,
+function name, arguments list) argument. We end with:
 
 [remote-vs-local]: https://www.erlang.org/doc/reference_manual/code_loading.html#code-replacement
 
@@ -386,7 +386,7 @@ Elixir 1.14.5 (compiled with Erlang/OTP 25)
 
 [^currently]: Nixpkgs rev `bc3ec5ea`
 
-The results are as follow (in bytes of peak memory footprint returned by
+The results are as follows (in bytes of peak memory footprint returned by
 `/usr/bin/time` on macOS):
 
 | Implementation |       1k |      100k |         1M |

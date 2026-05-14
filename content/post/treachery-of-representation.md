@@ -28,7 +28,7 @@ representation of the IPv4 which in reality is single 32-bit number which is
 represented as dot separated 8-bit values just out of convenience. The same
 applies to SHA-1 hashes, UUIDs, etc.
 
-We people are great in finding patterns and simplifications, so when one sees
+We people are good at finding patterns and simplifications, so when one sees
 something like:
 
 ```

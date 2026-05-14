@@ -87,13 +87,13 @@ types of data. This causes headaches because:
   independently to check if this is configuration file or it is data
 - I cannot exclude data from my backups in a uniform way. I need to check each
   file independently and exclude it, remembering to do that for each new tool
-  that I add. Alternatively I can use whitelist instead of blacklist of paths
+  that I add. Alternatively, I can use whitelist instead of blacklist of paths
   that I want to backup, but that pretty much defies the idea of having
   automatic backup.
 - Cleaning up the old caches and data is troublesome as user need to review all
   the folders and know what data they see mean.
 
-But what We can do? Well, the macOS and Windows got it somewhat right, these
+But what We can do? Well, the macOS, and Windows got it somewhat right, these
 OSes provide special paths for storing all configuration, caches, user-data,
 etc. in special, dedicated, and well known locations within user directories. It
 is like mentioned earlier FHS but for `$HOME`.
@@ -112,7 +112,7 @@ This makes life so much easier:
 - Want to have backup your configuration? Just copy `$HOME/.config` where you
   want.
 - Want to reset your configuration to base one? Just delete `$HOME/.config`.
-- Want to cleanup caches? Remove `$HOME/.cache`.
+- Want to clean up caches? Remove `$HOME/.cache`.
 - Etc.
 
 It makes your `$HOME` much cleaner, much more manageable, much more like your
@@ -130,7 +130,7 @@ with Commander, but this one I vote all-fours.
 
 For these who want to stop that madness and fix at least some software out there
 that is broken, you can check out [my script][xdg-please] that tries to fix
-(at least partially) non-conforming software.
+(at least partially) nonconforming software.
 
 ---
 

@@ -15,7 +15,7 @@ tags = [
 ![My example session in NeoVim with QuickFix displaying Credo warnings](/img/vim-session.png)
 
 I am quite orthodox Vim user and I like to know everything that is happening in
-my editor configuration. By no means I am "minimal" Vim user, I currently have
+my editor configuration. By no means I am "minimal" Vim user. I currently have
 48 plugins installed, I just very carefully pick my plugins (few of them I have
 written myself) to use only plugins that I understand and I can fix on my own in
 case of problems. This results with configuration I understand and control in
@@ -25,7 +25,7 @@ all means.
 
 This isn't "introduction into Vim" article neither "how to configure Vim for
 Elixir development". Here I will try to describe how I use Vim for Elixir and
-Erlang development, you can find some nice ideas and tips that may help you, but
+Erlang development. You can find some nice ideas and tips that may help you, but
 by any means I do not mean that this is configuration you should or should not
 use. You should use whatever you like (even if I do not like what you use) as
 long as you understand what you use and why you use that.
@@ -51,10 +51,10 @@ few other niceties that I will describe later.
 
 But how to install it? In truly minimal setup you can just create
 `pack/elixir/start` directory within your `~/.vim` folder
-(`$XDG_CONFIG_DIR/nvim` in case of NeoVim) and clone given repository there,
-however I am using [`vim-packager`][] which is based on [`minpac`][] and is
+(`$XDG_CONFIG_DIR/nvim` in case of NeoVim) and clone given repository there.
+However, I am using [`vim-packager`][] which is based on [`minpac`][] and is
 truly minimal package manager (it is important distinction from [`vim-plug`][]
-or others that also manages plugin loading, these plugins only manage fetching)
+or others that also manages plug-in loading. These plugins only manage fetching)
 which even do not need to be loaded during "normal" runtime, only when you are
 updating plugins.
 
@@ -64,17 +64,17 @@ A lot of people, when come from other editors, often install NERDTree to have
 "project drawer" functionality within Vim, because this is what they are used
 to. Unfortunately "[split windows and the project drawer go together like oil
 and vinegar][oil-and-vinegar]" and it can result in painful experience or, which
-is even worse, avoiding built in functionalities, because these do not mix well.
-Vim comes with built in NetRW plugin for working with remote files and directory
+is even worse, avoiding built-in functionalities, because these do not mix well.
+Vim comes with built-in NetRW plugin for working with remote files and directory
 tries. However for me this plugin is bloated as well and I would love to get rid
 of it (unfortunately it is not currently possible as few functionalities relies
 on it, namely dictionaries) so I replaced everything with [`dirvish`][].
-Additionally I often use fuzzy finder, which in my case is [`vim-picker`][] with
+Additionally, I often use fuzzy finder, which in my case is [`vim-picker`][] with
 [`fzy`][] which for me is much faster and more precise than popular FZF.
 
 These tools are great when we are navigating in tree that is new to us or do not
 have explicit structure. When we are working on Elixir projects then we know
-before hand that there will be some commonly shared structure, like
+before hand that there will be some commonly shared structure. Like
 `lib/<name>.ex` will contain source code, `test/<name>_test.exs` will contain
 test files, etc. What is more we know that `<name>` part will be shared between
 file and its unit tests. This is very powerful assumption, as this allow us to
@@ -205,14 +205,14 @@ reasons:
   any compatibility layers or fighting with different runtimes.
 - It is simple enough that I can easily dig into it, and fix problems that I
   have encountered.
-- It doesn't override any built in Vim functionality and instead provide set of
+- It doesn't override any built-in Vim functionality and instead provide set of
   commands that you can then bind to whatever mappings you want.
 - It do not force me to use autocompletion, which I do not use at all. At the
   same time it provides seamless integration with built-in Vim functionality of
   omnicompletion and user completion by providing `lsp#complete` function.
 
 This approach of not providing default mappings is really nice for power users,
-as this allow us to define everything on our own. For example some of plugins
+as this allow us to define everything on our own. For example, some of plugins
 use <kbd>&lt;C-]&gt;</kbd> for jumping to definition, which I often use (it is
 jump to tag definition) and shadowing it would be problematic for me. So in the
 end I have created my own set of mappings, that have additional feature of being
@@ -279,19 +279,20 @@ that not using such functionality makes me a less sloppy and better programmer.
 It makes me to think when I write and do not rely on some magical friend that
 will always watch over my shoulder. However when the problem happens in my code
 I would like to know where and quickly jump to the place where error occurred.
-Additionally I would like to run tasks in the background without interruption to
-my current work. All of it became possible with introduction of asynchronous
+Additionally, I would like to run tasks in the background without interruption
+to my current work. All of it became possible with introduction of asynchronous
 tasks in NeoVim and Vim 8. So I have created plugin [`asyncdo.vim`][] that
-allows me to easily implement `:Make` command that works exactly like built
-in [`:make`][], but do not halt my normal work. Together with [`vim-makery`][]
-(which nicely integrates with `vim-projectionsit`) and built in functionality of
-[`:compiler`][], which is supported by `vim-elixir`, it allows me to easily run all
-sorts of commands very easily. If you look into projectionist heuristics above
-you will see that there is `"makery"` key defined for `*.ex` and `*.exs` files.
-That allows me to run `:Mlint %` to run Credo on current file and the results
-will be present within QuickFix window which together with my [`qfx.vim`][] will
-mark lines with errors using signs. In the same manner I can run `:Mtest` to run
-tests for whole project and have failed tasks visible in QuickFix window.
+allows me to easily implement `:Make` command that works exactly like
+built-in [`:make`][], but do not halt my normal work. Together with
+[`vim-makery`][] (which nicely integrates with `vim-projectionsit`) and built-in
+functionality of [`:compiler`][], which is supported by `vim-elixir`, it allows
+me to easily run all sorts of commands very easily. If you look into
+projectionist heuristics above you will see that there is `"makery"` key defined
+for `*.ex` and `*.exs` files. That allows me to run `:Mlint %` to run Credo on
+current file and the results will be present within QuickFix window which
+together with my [`qfx.vim`][] will mark lines with errors using signs. In the
+same manner I can run `:Mtest` to run tests for whole project and have failed
+tasks visible in QuickFix window.
 
 ## Other utilities
 
@@ -316,7 +317,7 @@ improving your own Vim configuration without adding much clutter.
 
 No, I will not publish my own `vimrc` in fear that some of you will copy it as
 is (also not that this is particularly troublesome for anyone who is aware of
-Google to find it). Instead I highly suggest You to dig into your own
+Google to find it). Instead, I highly suggest You to dig into your own
 configuration and for each line ask yourself:
 
 - Do I know what this line **does**?

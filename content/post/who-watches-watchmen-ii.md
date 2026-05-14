@@ -49,9 +49,9 @@ PrivateDevices=true
 Environment=ERL_CRASH_DUMP_SECONDS=0
 ```
 
-However there is one small problem. It allows our service to listen on **any**
+However, there is one small problem. It allows our service to listen on **any**
 restricted port, not just `80` that we want to listen on. This can be
-troublesome as an attacker that gains RCE on our server can then capture any
+troublesome as an attacker, that gains RCE on our server, can then capture any
 traffic on any port that we do not want to open (for example exposing port 22
 using the [`ssh`] module).
 
@@ -292,7 +292,7 @@ unprivileged user.
 Now, that we can inject sockets to our application with ease we can achieve even
 more fascinating feature - socket activation.
 
-Some of you may used `inetd` in the past, that allows you to dynamically start
+Some of you may be using `inetd` in the past, that allows you to dynamically start
 processes on network requests. It is quite an interesting tool that detects
 traffic on certain ports, then spawns a new process to handle it, passing data
 to and from that process via `STDIN` and `STDOUT`. There was a quirk though, it
@@ -326,7 +326,7 @@ TriggeredBy: ● hello-http.socket ● hello-https.socket
 ```
 
 We can see the `TriggeredBy` section that tells us, that this service will be
-started by one of the sockets listed there. Let see what will happen when we
+started by one of the sockets listed there. Let's see what will happen when we
 will try to request anything from our application:
 
 ```txt
@@ -364,7 +364,7 @@ That means, that systemd is still listening on the sockets that we defined, even
 when our application is down, and will start our application again as soon as
 there are any incoming requests.
 
-Let test that out again:
+Let's test that out again:
 
 ```txt
 $ curl http://localhost/

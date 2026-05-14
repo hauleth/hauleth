@@ -33,9 +33,9 @@ Elixir gained 4 new log levels to total 8 (from most verbose to least verbose):
 
 <small>* new levels</small>
 
-This allow to provide finer graded verbosity control, due to compatibility
-reasons, in Elixir backends we need to translate these levels back to "old" set
-of 4. The current table looks like:
+This provides finer graded verbosity control, due to compatibility reasons, in
+Elixir backends we need to translate these levels back to "old" set of 4. The
+current table looks like:
 
 | Call level            | What Elixir backend will see |
 | --                    | --                           |
@@ -62,7 +62,7 @@ Logger.notice("Hello")
 
 Will produce message with `notice` level of verbosity.
 
-Additionally the `logger.level` option in configuration supports 2 additional
+Additionally, the `logger.level` option in configuration supports 2 additional
 verbosity levels that you can use in your config:
 
 - `:all` - all messages will be logged, logically exactly the same as `:debug`
@@ -321,7 +321,7 @@ As we can see there, the report contains information like:
     not stringified in any way there, it is simply passed "as is" to the
     report. It is meant to be stringified later by the `:report_cb` function.
   - `:name` - name of the process. Remember, similarly to `:module`, the PID of
-    the current process is part of the metadata, so in theory we could use value
+    the current process is part of the metadata. So in theory we could use value
     from there, but their meaning is different (additionally this one may be an
     atom in case if the process is locally registered with name).
 
@@ -358,18 +358,18 @@ end
 
 Few important things that need to be remembered when writing such filters:
 
-- It is best practice to make such functions public and define filters using
+- Best practice is to make such functions public and define filters using
   remote function capture, like `&__MODULE__.process_disabled/2` (so not
   anonymous functions either). It will make such filter much easier for VM to
   handle (it is bigger topic why it is that, I may to cover it in another post).
-- Filters are ran **within the same process that fired log event**, so it is
+- Filters are run **within the same process that fired log event**, so it is
   important to make such filters as fast as possible, and do not do any heavy
   work there.
 
 Filters can be used for 2 different things:
 
-- preventing some messages from being logged
-- modifying a message
+- Preventing some messages from being logged
+- Modifying a message
 
 While the former is much more common, I will try to describe both use cases
 there, as the latter is also quite useful.
@@ -411,13 +411,13 @@ important for us. [Erlang even prepared some useful filters][logger_filters]:
 
 ### Modifying a message
 
-Sometimes there is need to alter messages in the system. For example we may need
+Sometimes there is need to alter messages in the system. For example, we may need
 to prevent sensitive information from being logged. When using "old" Elixir
 approach you could abuse translators, but that was error prone, as first
 successful translator was breaking pipeline, so you couldn't just smash one on
 top and then keep rest working as is. With "new" approach and structured logging
 you can just traverse the report and replace all occurrences of the unsafe data
-with anonymised data. For example:
+with anonymized data. For example:
 
 ```elixir
 def filter_out_password(%{msg: {:report, report}} = event, _opts) do
@@ -458,15 +458,15 @@ filtered out value.
 The disadvantage of such approach - it will make all messages with such fields
 allowed in case if your filter has `:filter_default` set to `:stop`. That mean,
 that if you want to make some of them rejected anyway, then you will need to
-manually add additional step to reject messages that do not fit into your
-patterns. Alternatively you can use `filter_default: :log` and then use opt-out
+manually add an additional step to reject messages that do not fit into your
+patterns. Alternatively, you can use `filter_default: :log` and then use opt-out
 logging. There currently is no way to alter the message and make other filters
 decide whether log it or not (as of OTP 24).
 
 ## Summary
 
 New features and possibilities with relation to logging in Elixir 1.11 can be
-overwhelming. Fortunately all of the new features are optional and provided in
+overwhelming. Fortunately, all the new features are optional and provided in
 addition to "good 'ol `Logger.info("logging")`". But for the people who works on
 the observability in BEAM (EEF Observability WG, Sentry, Logflare, etc.) it
 brings a lot of new powerful capabilities.
