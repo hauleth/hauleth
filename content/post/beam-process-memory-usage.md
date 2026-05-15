@@ -389,6 +389,7 @@ Elixir 1.14.5 (compiled with Erlang/OTP 25)
 The results are as follows (in bytes of peak memory footprint returned by
 `/usr/bin/time` on macOS):
 
+{% table() %}
 | Implementation |       1k |      100k |         1M |
 | -------------- | -------: | --------: | ---------: |
 | Original       | 45047808 | 452837376 | 4227715072 |
@@ -397,6 +398,7 @@ The results are as follows (in bytes of peak memory footprint returned by
 | Count          | 43732992 | 313507840 | 2780540928 |
 | Registry       | 44453888 | 311988224 | 2787237888 |
 | RemoteCall     | 43597824 | 310595584 | 2771525632 |
+{% end %}
 
 As we can see we have reduced the memory use by about 30% by just changing
 from `Task.async/1` to `spawn/1`. Further optimisations reduced memory usage

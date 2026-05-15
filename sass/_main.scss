@@ -188,10 +188,14 @@ blockquote {
   }
 }
 
+.table {
+  overflow: auto;
+}
+
 table {
   border-collapse: collapse;
-  width: 100%;
-  margin: 40px 0;
+  // width: 100%;
+  margin: 1em 0;
 }
 
 table, th, td {
