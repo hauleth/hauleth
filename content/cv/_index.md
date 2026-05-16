@@ -10,7 +10,7 @@ sitemap = false
 **Website:** <https://hauleth.dev>  
 
 **GitHub**: <https://github.com/hauleth>  
-**Tangled**: <https://tangled.com/@hauleth.dev>  
+**Tangled**: <https://tangled.org/hauleth.dev>  
 **StackOverflow**: <https://stackoverflow.com/u/1017941>  
 
 ## Technical Skills
