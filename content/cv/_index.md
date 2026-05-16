@@ -11,18 +11,17 @@ sitemap = false
 
 **GitHub**: <https://github.com/hauleth>  
 **Tangled**: <https://tangled.org/hauleth.dev>  
-**StackOverflow**: <https://stackoverflow.com/u/1017941>  
 
 ## Technical Skills
 
 **Languages & Frameworks**: Elixir, Erlang (OTP), Rust, PostgreSQL, Ruby on Rails, Bash, Nix/NixOS  
 **Tools & Technologies**: Git, Terraform, Consul, Nomad, Docker, GNU/Linux  
 
-## Notable contributions
+## Notable Contributions
 
 - Elixir - logger reimplementation on top of Erlang's `logger` module, `mix test
-  --cover` CLI output,  Support for `NO_COLOR` environment variable, add
-  `is_struct/1` guard, fix module inspection on case-insensitive file systems,
+  --cover` CLI output, Support for `NO_COLOR` environment variable, add
+  `is_struct/1` guard, fix module inspection on case-insensitive filesystems,
   support for parsing extra arguments via `mix eval` and `eval` command in
   release
 - Erlang OTP - add support broader set of protocols in `socket` module, support
@@ -43,7 +42,7 @@ analysis with detailed report with proposed solutions
 {% end %}
 
 {% section() %}
-### Supabase Supavisor - Lead Elixir Developer
+### Supabase - Lead Elixir Developer
 
 <small>2023&ndash;2025</small>
 
@@ -58,11 +57,11 @@ analysis with detailed report with proposed solutions
   improve production issues
 - Implemented multi-region deployment system to provide blue/green
   deployments
-- Replaced usage of `ct_slave` with newer `peer` module in OTP
+- Replaced usage of `ct_slave` with newer `peer` module
 {% end %}
 
 {% section() %}
-### Supabase Logflare - Senior Elixir Developer
+### Logflare - Senior Elixir Developer
 
 <small>2023</small>
 

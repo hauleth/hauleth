@@ -9,11 +9,18 @@ a.button {
   margin-bottom: 5px;
   text-decoration: none;
   text-align: center;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border: 4px solid var(--accent);
+  color: var(--accent);
+  font-size: .9em;
+  font-family: ui-monospace, monospace;
+  background: transparent;
   appearance: none;
   cursor: pointer;
   outline: none;
+
+  &:hover {
+    box-shadow: 0 0 2rem var(--accent-alpha-70);
+  }
 
   /* variants */
 
@@ -62,4 +69,5 @@ a.read-more:active {
   padding: 0;
   margin: 20px 0;
   max-width: 100%;
+  border: none;
 }
