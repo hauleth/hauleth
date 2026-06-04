@@ -29,9 +29,9 @@ Her proposed solutions were:
 > something small and out of the critical path? What is the work we need to do
 > to prepare? What comes first, ordering-wise? Can we put that on the roadmap?
 
-But that is completely missing a point. The whole point of doing review is to
-[diffuse responsibility][dor]. No one want to be the sole person responsible for
-the downtime of the system. No one want to be the sole person responsible for
+But that is completely missing a point. The point of doing review is to [diffuse
+responsibility][dor]. No one want to be the sole person responsible for the
+downtime of the system. No one want to be the sole person responsible for
 security issues. No one want to be responsible for accidental data removal. And
 the sole purpose of reviews is to remove that burden form single individual and
 instead make it *team responsibility*. That way, the blame is "spread" among
