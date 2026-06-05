@@ -58,10 +58,8 @@ are, here is a button for them to click:
         "Satisfaction"
     ]
     let curr = 0
-
     document.addEventListener("DOMContentLoaded", () => {
         let button = document.getElementById("pointless-button")
-
         button.addEventListener("click", (ev) => {
             curr = (curr + 1) % LYRICS.length
             ev.target.innerText = LYRICS[curr]
