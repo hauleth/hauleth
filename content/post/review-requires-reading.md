@@ -48,7 +48,7 @@ are, here is a button for them to click:
 
 <div>
     <center>
-        <button id="pointless-button">Push me!</button>
+        <button id="pointless-button plausible-event-name=Review+Button+Merge">Push me!</button>
     </center>
 {% script() %}
     const LYRICS = [
