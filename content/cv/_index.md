@@ -12,23 +12,37 @@ sitemap = false
 **GitHub**: <https://github.com/hauleth>  
 **Tangled**: <https://tangled.org/hauleth.dev>  
 
+{% section() %}
+## Summary
+
+Principal-level Elixir/Erlang Engineer with 10+ years of experience building
+distributed cloud-native platforms and high-performance backend services.
+Contributor to Elixir, Erlang/OTP, and Ecto. Specializing in performance
+engineering, distributed systems, and fault-tolerant platforms.
+
+**Areas of expertise**:  
+Distributed Systems &middot; BEAM/OTP &middot; Performance Engineering &middot; System Architecture &dot; Technical Mentoring
+{% end %}
+
 ## Technical Skills
 
-**Languages & Frameworks**: Elixir, Erlang (OTP), Rust, PostgreSQL, Ruby on Rails, Bash, Nix/NixOS  
-**Tools & Technologies**: Git, Terraform, Consul, Nomad, Docker, GNU/Linux  
+**Core Technologies**: Elixir, Erlang/OTP, Phoenix, Ecto, PostgreSQL  
+**Additional Experience**: Rust, Terraform, Nomad, Consul, Docker, Nix/NixOS  
 
-## Notable Contributions
+{% section() %}
+## Open Source & Ecosystem Contributions
 
-- Elixir - logger reimplementation on top of Erlang's `logger` module, `mix test
-  --cover` CLI output, Support for `NO_COLOR` environment variable, add
-  `is_struct/1` guard, fix module inspection on case-insensitive filesystems,
-  support for parsing extra arguments via `mix eval` and `eval` command in
-  release
-- Erlang OTP - add support broader set of protocols in `socket` module, support
-  for custom devices in `logger_std_h`, support for global metadata in `logger`,
-  support for reconfiguration of `logger` (needed for better Mix and Rebar3
-  integration)
-- Ecto - support aggregations over `*`, better error on duplicated `schema` block
+- Contributor to Elixir core
+- Contributor to Erlang/OTP
+- Contributor to Ecto
+- Changes accepted across logging, networking, tooling, and language features
+- Member of Erlang Ecosystem Foundation Observability Working Group
+- Member of OpenTelemetry Erlang Working Group
+- Speaker at CodeBEAM V America - *Who supervises supervisors?*
+- Speaker at ElixirConf EU 2022 - *"`config.exs` is simple" and Other Lies*
+- Guest at Thinking Elixir Episode 149 - *Elixir's Unified Logger*
+- *Member of the Year* on Elixir Forum in years 2019&ndash;2025
+{% end %}
 
 ## Professional Experience
 
@@ -37,8 +51,10 @@ sitemap = false
 
 <small>2025</small>
 
-Architectural analysis of client product codebase with preparation of security
-analysis with detailed report with proposed solutions
+- Architectural analysis of client product codebase with preparation of system
+  analysis with detailed report
+- Proposed several improvements in areas of security, architecture design, fault
+  tolerance, and scalability
 {% end %}
 
 {% section() %}
@@ -46,18 +62,18 @@ analysis with detailed report with proposed solutions
 
 <small>2023&ndash;2025</small>
 
-- Optimised metrics gathering system that resulted in an order of
-  magnitude performance boost
-- Updated used OTP and Elixir versions from OTP 24 to OTP 27 and Elixir
-  from 1.14 to 1.18
-- Reduced usage of mocking in tests to improve tests performance and
-  volatility, resulting in reduced CI usage and improved developer
-  experience
-- Implemented e2e tests against existing Node.js PostgreSQL clients to
-  improve production issues
-- Implemented multi-region deployment system to provide blue/green
-  deployments
-- Replaced usage of `ct_slave` with newer `peer` module
+- Redesigned metrics gathering architecture resulting in 10&times; throughput
+  improvement and lower infrastructure costs
+- Updated used OTP and Elixir versions from OTP 24 to OTP 27 and Elixir from
+  1.14 to 1.18
+- Reduced usage of mocking in tests to improve tests performance and volatility,
+  resulting in reduced CI usage and improved developer experience
+- Implemented e2e tests against existing 3rd-party PostgreSQL clients to improve
+  platform reliability for external clients
+- Led design and implementation of multi-region deployment strategy improving
+  platform fault tolerance and availability
+- Mentored team about Erlang and Elixir profiling tooling and performance
+  analysis for hot code paths
 {% end %}
 
 {% section() %}
@@ -65,17 +81,18 @@ analysis with detailed report with proposed solutions
 
 <small>2023</small>
 
-- Implemented on-the-fly decompression of incoming data that improved
-  ingestion possibilities and reduced transfer usage
-- Implemented DataDog-compatible ingestion endpoint for seamless
-  transition from DataDog provider to Logflare
-- Improved BigQuery pipeline workflow to reduce congestion on database
-  connections
+- Implemented on-the-fly decompression of incoming data that improved ingestion
+  possibilities and reduced transfer usage by up to 50%
+- Implemented DataDog-compatible ingestion endpoint for seamless transition from
+  DataDog to Logflare
+- Reduced BigQuery congestion by 10% by architectural redesign of existing
+  pipelines
 - Added support for AWS Cloud Events metadata extraction
-- Improved CI usage by splitting different actions to separate steps ran
-  in parallel
-- Replaced dynamic generation of connection modules for PostgreSQL
-  storage system with Ecto's dynamic repositories to avoid atom exhaustion
+- Improved CI utilisation by 35% thanks to splitting different actions to
+  separate steps ran in parallel
+- Replaced dynamic generation of connection modules for PostgreSQL storage
+  system with Ecto's dynamic repositories to prevent DoS attack via atom
+  exhaustion
 {% end %}
 
 {% section() %}
@@ -83,9 +100,10 @@ analysis with detailed report with proposed solutions
 
 <small>2022&ndash;2023</small>
 
-- **Forte.io** - implemented Interledger protocol for cross-chain transactions
-- **Aleo Blockchain** - implemented GraphQL API for the on-chain data; created
-  syntax colouring library for Aleo assembly-like language for smart contracts
+- Implemented Interledger protocol for cross-chain financial transactions
+- Led implementation of GraphQL APIs for blockchain data platforms
+- Led small engineering team and delivered developer tooling for smart contract
+  ecosystems
 {% end %}
 
 {% section() %}
@@ -93,14 +111,11 @@ analysis with detailed report with proposed solutions
 
 <small>2021</small>
 
-Optimised DB query performance by providing PostgreSQL structure analysis and
-improving indices usage
-{% end %}
-
-{% section() %}
-### Remote Inc. - Consultant
-
-<small>2020&ndash;2021</small>
+- Optimised database query performance by 15% via PostgreSQL structure analysis
+  and improved indices usage.
+- Prepared company-wide learning materials for PostgreSQL utilisation and
+  configuration. Mentored team about their SQL queries
+writing skills.
 {% end %}
 
 {% section() %}
@@ -108,7 +123,12 @@ improving indices usage
 
 <small>2019&ndash;2020</small>
 
-Implementation of transactions in MongoDB driver for Elixir
+- Maintenance of open-source MongoDB driver
+- Implemented support for transactions in MongoDB driver for Elixir
+- Migrated build system from Rebar3 to Mix to improve integration with Elixir
+  dependencies
+- Created Hex-compatible package registry for serving internal packages together
+  with HexDocs-compatible documentation viewer
 {% end %}
 
 {% section() %}
@@ -116,12 +136,11 @@ Implementation of transactions in MongoDB driver for Elixir
 
 <small>2016&ndash;2019</small>
 
-- **JaFolders/AlleFolders** - 2&times; performance improvement by optimising
-  PostgreSQL usage by reducing geo-queries using PostGIS thanks to better
-  indices and materialised views; implemented UI and brochure viewer in Vue and
-  SVG
-- **OneMedical/Helium Health** - architectural redesign and reimplementation of
-  application from Rails/MongoDB to Phoenix/PostgreSQL; prepared hybrid
-  deployment with on-premise/in-cloud system; migrated of the existing
-  deployments from MongoDB to PostgreSQL
+- 2&times; performance improvement by optimising PostgreSQL usage by reducing
+  geo-queries using PostGIS thanks to better indices and materialised views
+- Implemented UI and brochure viewer in Vue and SVG
+- Architectural redesign and reimplementation of application from Rails/MongoDB
+  to Phoenix/PostgreSQL
+- Prepared hybrid deployment with on-premise/in-cloud system
+- Migrated of the existing deployments from MongoDB to PostgreSQL
 {% end %}
