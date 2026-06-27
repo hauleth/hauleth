@@ -1,0 +1,21 @@
+<div class="question" id="{{ name }}">
+  <p><b>Q:</b> {{ desc | markdown(inline=true) | safe }}</p>
+
+  {% for option in options %}
+  {% set id = name ~ "-a-" ~ loop.index %}
+  <div class="option {% if correct == loop.index0 %}correct{% endif %}">
+    <input type="radio"
+           name="{{name}}"
+           id="{{id}}"
+           value="{{option}}"
+           >
+    <label for="{{id}}">{{ option | markdown(inline=true) | safe }}</label>
+  </div>
+  {% endfor %}
+
+  <div class="answer">
+    <div class="wrong">WRONG</div>
+    <div class="right">RIGHT</div>
+    {{ body | markdown | safe }}
+  </div>
+</div>

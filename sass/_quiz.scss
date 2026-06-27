@@ -1,0 +1,22 @@
+.question {
+  .answer {
+    display: none;
+    border: 1px solid pink;
+    padding: 1em;
+    margin: 2em 0;
+
+    .right { display: none; color: lightgreen; font-weight: 500; font-size: larger; }
+    .wrong { display: block; color: pink; font-weight: 500; font-size: larger; }
+  }
+
+  &:has(.option > input[type=radio]:checked) .answer {
+    display: block;
+  }
+
+  &:has(.option.correct > input[type=radio]:checked) .answer {
+    border-color: lightgreen;
+
+    .right { display: block; }
+    .wrong { display: none; }
+  }
+}
