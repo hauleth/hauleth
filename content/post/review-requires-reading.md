@@ -11,7 +11,7 @@ tags = [
 
 On [Lobste.rs][] I have found today the article written by the Charity
 Majors - CTO of the Honeycomb.io ["AI enthusiasts are in a race against time, AI
-skeptics are in a race against entropy"][art]. This was pretty good read until
+sceptics are in a race against entropy"][art]. This was pretty good read until
 there was this question posed:
 
 [Lobste.rs]: https://lobste.rs

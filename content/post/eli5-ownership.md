@@ -1,5 +1,5 @@
 +++
-date = 2019-07-14T17:38:48+01:00
+date = 2019-07-14
 description = "Simple introduction to Rust's ownership system"
 title = "Here be (owned) books"
 

@@ -1,6 +1,6 @@
 +++
 title = "Stop Spreading Crap at My `$HOME`"
-date = 2020-04-15T12:00:19+02:00
+date = 2020-04-15
 
 [taxonomies]
 tags = [
@@ -11,7 +11,7 @@ tags = [
 **Disclaimer:** Yes, this is a rant. Yes, I am displeased with state of
 software. And yes, I can use some harsh words. You were warned.
 
-For a some time now we have [Filesystem Hierarchy Standard][fhs] which describes
+For some time now we have [Filesystem Hierarchy Standard][fhs] which describes
 which data goes where in your \*nix installation. In fact we have that for 28
 years, which is almost as long as I live. This is quite some time. But for
 whatever reason we apply that only for the system hierarchy and we cannot have
@@ -80,7 +80,7 @@ repository, but most are not. What is the problem there?
 
 The spread.
 
-All of the data is smeared between gazillion of different filed with different
+All the data is smeared between gazillion of different filed with different
 types of data. This causes headaches because:
 
 - I cannot easily backup all the configuration as I need to check each file
@@ -88,7 +88,7 @@ types of data. This causes headaches because:
 - I cannot exclude data from my backups in a uniform way. I need to check each
   file independently and exclude it, remembering to do that for each new tool
   that I add. Alternatively, I can use whitelist instead of blacklist of paths
-  that I want to backup, but that pretty much defies the idea of having
+  that I want backup, but that pretty much defies the idea of having
   automatic backup.
 - Cleaning up the old caches and data is troublesome as user need to review all
   the folders and know what data they see mean.

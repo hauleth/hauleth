@@ -1,7 +1,7 @@
 +++
 title = "Dumb Elixir VIsual (and iMproved) editor"
 description = "How I have configured Vim for working with Elixir and Erlang projects"
-date = 2019-04-13T21:40:05+02:00
+date = 2019-04-13
 
 [taxonomies]
 tags = [
