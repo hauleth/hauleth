@@ -33,7 +33,7 @@
       {%- if page.description -%}
         <summary>{{ page.description }}</summary>
       {%- elif page.summary -%}
-        <summary type="html">{{ page.summary }}</summary>
+        <summary type="html">{{ page.summary | safe }}</summary>
       {%- endif -%}
       <content type="html">{{ page.content }}</content>
     </entry>
