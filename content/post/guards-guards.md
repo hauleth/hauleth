@@ -9,6 +9,10 @@ Small gotcha about boolean operators in Elixir.
 tags = [
     "beam"
 ]
+
+[[extra.thanks]]
+name = "Joseph LaFreniere"
+why = "for pointing out some typos"
 +++
 
 Let's start with simple quiz.
@@ -76,7 +80,7 @@ First one returns `true` and the rest is short circuited.
 Ouch, something changed…
 
 Again, we check guard, one condition `is_map_key(x, :foo) or is_integer(x)`. We
-hit first clause `is_map_key(x, :foo)` and this **doesn't** return `false`,
+hit the first clause `is_map_key(x, :foo)` but this **doesn't** return `false`,
 instead it fail. Failure in one of guard functions isn't converted to `false`
 but instead makes whole guard expression fail. This mean that `is_integer(x)`
 part will **never** be called.
