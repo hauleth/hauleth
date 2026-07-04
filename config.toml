@@ -48,10 +48,9 @@ copyright = "copyright by <a href=\"https://hauleth.dev\" rel=me>hauleth</a>"
 # Menu items to display. You define a url and the name of the menu item.
 main_menu = [
   {url="https://plan.cat/~hauleth", name=".plan", rel="me"},
-  {url="https://fosstodon.org/@hauleth", name="toots", rel="me"},
-  {url="https://sr.ht/~hauleth", name="sourcehut", rel="me"},
+  {url="https://mu.social/profile/hauleth.dev", name="atmosphere", rel="me"},
   {url="https://github.com/hauleth", name="github", rel="me"},
-  {url="https://gitlab.com/hauleth", name="gitlab", rel="me"},
+  {url="https://tangled.org/hauleth.dev", name="tangled", rel="me"},
 ]
 
 # Displayed after teaser text for a blog post.
