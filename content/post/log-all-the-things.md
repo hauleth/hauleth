@@ -8,6 +8,9 @@ tags = [
   "observability"
 ]
 
+[extra]
+rkey = "3kx3rbkcwfr2g"
+
 [[extra.thanks]]
 name = "Kai Wern Choong"
 +++

@@ -7,6 +7,9 @@ tags = [
   "ai",
   "culture"
 ]
+
+[extra]
+rkey = "3p43cz2j2ehjr"
 +++
 
 On [Lobste.rs][] I have found today the article written by the Charity

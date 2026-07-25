@@ -6,6 +6,9 @@ date = 2020-04-15
 tags = [
   "culture"
 ]
+
+[extra]
+rkey = "3jdggn2fckmku"
 +++
 
 **Disclaimer:** Yes, this is a rant. Yes, I am displeased with state of

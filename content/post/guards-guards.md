@@ -10,6 +10,9 @@ tags = [
     "beam"
 ]
 
+[extra]
+rkey = "3p5xxn2bbhcyt"
+
 [[extra.thanks]]
 name = "Joseph LaFreniere"
 why = "for pointing out some typos"

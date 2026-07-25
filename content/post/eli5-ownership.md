@@ -7,6 +7,9 @@ title = "Here be (owned) books"
 tags = [
   "rust"
 ]
+
+[extra]
+rkey = "3imop522glqny"
 +++
 
 One of Rust's biggest pros is its unique ownership system. Unfortunately, it is

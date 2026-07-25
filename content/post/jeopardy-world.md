@@ -4,6 +4,9 @@ date = 2025-07-28
 
 [taxonomies]
 tags = ["ai", "culture"]
+
+[extra]
+rkey = "3pajpb26aefif"
 +++
 
 Some time ago, there was an anime available on Netflix — *Godzilla Singular

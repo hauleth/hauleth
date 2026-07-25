@@ -8,6 +8,9 @@ tags = [
  "testing"
 ]
 
+[extra]
+rkey = "3imrdj22eyst2"
+
 [[extra.thanks]]
 name = "José Valim"
 why = "for reading it through and reviewing before publishing"

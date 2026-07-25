@@ -16,6 +16,9 @@ tags = [
     "performance"
 ]
 
+[extra]
+rkey = "3oyeo52jl7zpr"
+
 [[extra.thanks]]
 name = "Angry Clippy (@ze.du on Discord)"
 why = "Redaction"

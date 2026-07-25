@@ -9,6 +9,9 @@ how to conceive plugin, how to go from an idea to the full fledged plugin."""
 tags = [
   "vim"
 ]
+
+[extra]
+rkey = "3ivyqzkexzf2i"
 +++
 
 While there are many "tutorials" for writing plugins in Vim, I hope this one

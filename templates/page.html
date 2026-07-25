@@ -4,6 +4,10 @@
 
 {%- block title -%}
   <title>{{ page.title }} - {{  config.extra.author }}</title>
+  {%- if page.extra.rkey -%}
+  <link rel="site.standard.document"
+        href="at://did:plc:your-did/site.standard.document/{{page.extra.rkey}}" />
+  {%- endif %}
 {%- endblock title -%}
 
 {%- block main -%}

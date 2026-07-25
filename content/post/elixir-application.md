@@ -10,6 +10,9 @@ post-launch scripts."""
 tags = [
   "beam"
 ]
+
+[extra]
+rkey = "3inodn27jcdth"
 +++
 
 When you start your new Elixir project via `mix new my_awesome_project` you will

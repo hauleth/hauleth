@@ -8,6 +8,9 @@ tags = [
   "beam",
   "vim"
 ]
+
+[extra]
+rkey = "3if44n26525ds"
 +++
 
 > Earlier published on [Medium](https://medium.com/@hauleth/dumb-elixir-visual-and-improved-editor-53c23a0800e4)

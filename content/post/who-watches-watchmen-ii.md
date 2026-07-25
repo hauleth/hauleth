@@ -14,6 +14,9 @@ tags = [
   "systemd"
 ]
 
+[extra]
+rkey = "3mp7enkfdfgxy"
+
 [[extra.thanks]]
 name = "Nicodemus"
 why = "helping me with my poor English"

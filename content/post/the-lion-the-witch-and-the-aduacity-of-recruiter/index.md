@@ -12,6 +12,9 @@ tags = [
     "culture",
     "rant"
 ]
+
+[extra]
+rkey = "3p6kgb25u42sn"
 +++
 
 I am searching for a job. If you've read my posts recently you may have noticed

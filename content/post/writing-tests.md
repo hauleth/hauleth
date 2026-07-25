@@ -14,6 +14,9 @@ tags = [
     "beam",
     "testing"
 ]
+
+[extra]
+rkey = "3p2bcr2iofeir"
 +++
 
 I created this post for myself to codify some basic guides that I use while

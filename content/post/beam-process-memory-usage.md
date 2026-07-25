@@ -8,6 +8,9 @@ tags = [
   "beam",
   "performance"
 ]
+
+[extra]
+rkey = "3mcbcb253xocn"
 +++
 
 Recently [benchmark for concurrency implementation in different
