@@ -6,7 +6,7 @@ no_comments = true
 sitemap = false
 +++
 
-<small>Principal Elixir Developer</small>
+<small>Senior Elixir Developer</small>
 
 **Email:** <lukasz@niemier.pl>  
 **Website:** <https://hauleth.dev>  
@@ -19,7 +19,7 @@ sitemap = false
 {% section() %}
 ## Summary
 
-Principal-level Elixir/Erlang Engineer with 10+ years of experience building
+Senior-level Elixir/Erlang Engineer with 10+ years of experience building
 distributed cloud-native platforms and high-performance backend services.
 Contributor to Elixir, Erlang/OTP, and Ecto. Specializing in performance
 engineering, distributed systems, and fault-tolerant platforms.
