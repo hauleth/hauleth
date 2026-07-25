@@ -24,6 +24,8 @@ author = "Hauleth"
 for_hire = true
 theme_color = "blue"
 
+at_did = "did:plc:6psaz6n5fuurrfet67zs4ljf"
+
 source = "https://tangled.sh/hauleth.dev/blog"
 
 logo_text = "~hauleth"
